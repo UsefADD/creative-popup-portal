@@ -1,4 +1,3 @@
-
 import { useState, useEffect } from "react";
 import { useToast } from "@/hooks/use-toast";
 import { WelcomeDialog } from "@/components/dialogs/WelcomeDialog";
@@ -35,14 +34,18 @@ const features = [
   },
 ];
 
-const plans = [
+const plans: Array<{
+  type: "yearly" | "lifetime";
+  description: string;
+  price: string;
+}> = [
   {
-    type: "yearly",
+    type: "yearly" as const,
     description: "Save big with our annual subscription! Get premium protection for unlimited devices with our most popular plan. Includes VPN service and identity protection at only",
     price: "99.99",
   },
   {
-    type: "lifetime",
+    type: "lifetime" as const,
     description: "One-time payment for lifetime protection! Get all premium features forever with no recurring charges at only",
     price: "89.99",
   },
