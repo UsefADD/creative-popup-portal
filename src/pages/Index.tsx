@@ -5,6 +5,7 @@ import { WelcomeDialog } from "@/components/dialogs/WelcomeDialog";
 import { PrivacyDialog } from "@/components/dialogs/PrivacyDialog";
 import { CheckoutDialog } from "@/components/dialogs/CheckoutDialog";
 import { Features } from "@/components/sections/Features";
+import { DetailedFeatures } from "@/components/sections/DetailedFeatures";
 import { Plans } from "@/components/sections/Plans";
 import { Testimonials } from "@/components/sections/Testimonials";
 
@@ -157,6 +158,7 @@ const Index = () => {
       </section>
 
       <Features features={features} />
+      <DetailedFeatures />
       <Plans plans={plans} onCheckout={handleCheckout} />
       <Testimonials testimonials={testimonials} />
 
