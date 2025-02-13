@@ -34,7 +34,16 @@ const features = [
   },
 ];
 
-const plans = [
+type Plan = {
+  type: "yearly" | "lifetime";
+  description: string;
+  price: string;
+  originalPrice?: string;
+  discount?: string;
+  checkoutUrl: string;
+};
+
+const plans: Plan[] = [
   {
     type: "yearly",
     description: "Get our best value with the annual plan! Protect unlimited devices with our premium security suite including VPN and identity protection.",
