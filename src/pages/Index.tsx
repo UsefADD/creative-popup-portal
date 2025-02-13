@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { Dialog, DialogContent, DialogDescription, DialogHeader, DialogTitle } from "@/components/ui/dialog";
 import { useToast } from "@/hooks/use-toast";
 import { X } from "lucide-react";
@@ -6,8 +6,19 @@ import { X } from "lucide-react";
 const Index = () => {
   const [showPrivacyDialog, setShowPrivacyDialog] = useState(false);
   const [showCheckoutDialog, setShowCheckoutDialog] = useState(false);
+  const [showWelcomeDialog, setShowWelcomeDialog] = useState(false);
   const [selectedPlan, setSelectedPlan] = useState<"yearly" | "lifetime" | null>(null);
   const { toast } = useToast();
+
+  useEffect(() => {
+    const hasSeenWelcome = localStorage.getItem("hasSeenWelcome");
+    if (!hasSeenWelcome) {
+      setTimeout(() => {
+        setShowWelcomeDialog(true);
+        localStorage.setItem("hasSeenWelcome", "true");
+      }, 1500); // Delay to let the page load first
+    }
+  }, []);
 
   const handleCheckout = (plan: "yearly" | "lifetime") => {
     setSelectedPlan(plan);
@@ -23,6 +34,7 @@ const Index = () => {
   };
 
   const scrollToPricing = () => {
+    setShowWelcomeDialog(false);
     const pricingSection = document.getElementById('pricing');
     if (pricingSection) {
       pricingSection.scrollIntoView({ behavior: 'smooth' });
@@ -126,6 +138,9 @@ const Index = () => {
         <DialogContent className="max-w-2xl max-h-[80vh] overflow-y-auto">
           <DialogHeader>
             <DialogTitle className="text-2xl font-bold">Privacy Policy</DialogTitle>
+            <DialogDescription className="text-gray-600">
+              Last updated: March 2024
+            </DialogDescription>
             <button
               onClick={() => setShowPrivacyDialog(false)}
               className="absolute right-4 top-4 rounded-sm opacity-70 ring-offset-background transition-opacity hover:opacity-100 focus:outline-none focus:ring-2 focus:ring-ring focus:ring-offset-2 disabled:pointer-events-none data-[state=open]:bg-accent data-[state=open]:text-muted-foreground"
@@ -133,7 +148,7 @@ const Index = () => {
               <X className="h-4 w-4" />
             </button>
           </DialogHeader>
-          <div className="mt-4">
+          <div className="mt-4 space-y-4">
             <PrivacyContent />
           </div>
         </DialogContent>
@@ -167,17 +182,29 @@ const Index = () => {
                     <div className="text-sm text-gray-600">
                       {selectedPlan === "yearly" ? "1 Year Subscription" : "Lifetime Access"}
                     </div>
+                    {selectedPlan === "yearly" && (
+                      <div className="text-green-600 text-sm font-semibold mt-1">
+                        30% Welcome Discount Applied!
+                      </div>
+                    )}
                   </td>
                   <td className="text-right p-4">
-                    ${selectedPlan === "yearly" ? "69.99" : "119.99"}
+                    {selectedPlan === "yearly" ? (
+                      <div>
+                        <span className="line-through text-gray-500">$69.99</span>
+                        <div className="text-green-600 font-bold">$48.99</div>
+                      </div>
+                    ) : (
+                      <div>$119.99</div>
+                    )}
                   </td>
                 </tr>
               </tbody>
               <tfoot>
-                <tr>
+                <tr className="border-t">
                   <th className="text-left p-4">Total</th>
                   <td className="text-right p-4 font-bold text-lg">
-                    ${selectedPlan === "yearly" ? "69.99" : "119.99"}
+                    ${selectedPlan === "yearly" ? "48.99" : "119.99"}
                   </td>
                 </tr>
               </tfoot>
@@ -196,6 +223,42 @@ const Index = () => {
                 Complete Purchase
               </button>
             </div>
+          </div>
+        </DialogContent>
+      </Dialog>
+      <Dialog open={showWelcomeDialog} onOpenChange={setShowWelcomeDialog}>
+        <DialogContent className="max-w-xl">
+          <DialogHeader>
+            <DialogTitle className="text-2xl font-bold text-center">
+              🎉 Exclusive Welcome Offer!
+            </DialogTitle>
+            <button
+              onClick={() => setShowWelcomeDialog(false)}
+              className="absolute right-4 top-4 rounded-sm opacity-70 ring-offset-background transition-opacity hover:opacity-100 focus:outline-none focus:ring-2 focus:ring-ring focus:ring-offset-2 disabled:pointer-events-none data-[state=open]:bg-accent data-[state=open]:text-muted-foreground"
+            >
+              <X className="h-4 w-4" />
+            </button>
+          </DialogHeader>
+          <div className="mt-4 text-center">
+            <div className="bg-red-50 p-6 rounded-lg mb-4">
+              <h3 className="text-3xl font-bold text-red-600 mb-2">Save 30% Today!</h3>
+              <p className="text-gray-700 mb-4">
+                Subscribe to our annual plan now and get premium protection for your entire family at an incredible discount!
+              </p>
+              <div className="text-2xl font-bold text-red-600 mb-4">
+                <span className="line-through text-gray-500">$69.99</span>
+                <span className="ml-2">$48.99/year</span>
+              </div>
+              <button
+                onClick={scrollToPricing}
+                className="bg-red-600 hover:bg-red-700 text-white font-bold py-3 px-8 rounded-full transition-all transform hover:scale-105 duration-200"
+              >
+                Claim Discount Now
+              </button>
+            </div>
+            <p className="text-sm text-gray-500">
+              *Limited time offer. Discount applies to first year only.
+            </p>
           </div>
         </DialogContent>
       </Dialog>
