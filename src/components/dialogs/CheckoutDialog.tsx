@@ -55,7 +55,7 @@ export const CheckoutDialog = ({ open, onOpenChange, selectedPlan, onPurchase }:
                       <div className="text-green-600 font-bold">$69.99</div>
                     </div>
                   ) : (
-                    <div className="font-bold">$9.99</div>
+                    <div className="font-bold">$14.99</div>
                   )}
                 </td>
               </tr>
@@ -64,7 +64,7 @@ export const CheckoutDialog = ({ open, onOpenChange, selectedPlan, onPurchase }:
               <tr className="border-t">
                 <th className="text-left p-4">Total</th>
                 <td className="text-right p-4 font-bold text-lg">
-                  ${isMonthlyPlan ? "9.99" : "69.99"}
+                  ${isMonthlyPlan ? "14.99" : "69.99"}
                 </td>
               </tr>
             </tfoot>
