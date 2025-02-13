@@ -44,7 +44,7 @@ const Index = () => {
   return (
     <div className="min-h-screen bg-gray-100 text-gray-800">
       <header className="bg-red-600 text-white p-6 text-center shadow-md">
-        <h1 className="text-3xl font-bold">Protect Your Family with McAfee</h1>
+        <h1 className="text-3xl font-bold">McAfee Premium Family Protection</h1>
       </header>
       <section className="relative text-white text-center py-24" 
                style={{ background: "linear-gradient(rgba(220,38,38,0.9), rgba(220,38,38,0.9))" }}>
@@ -54,17 +54,17 @@ const Index = () => {
           className="absolute inset-0 w-full h-full object-cover opacity-50"
         />
         <div className="relative z-10 max-w-4xl mx-auto">
-          <h2 className="text-5xl font-bold mb-4">Comprehensive Security for Unlimited Devices</h2>
+          <h2 className="text-5xl font-bold mb-4">Complete Family Security Solution</h2>
           <p className="text-xl mb-8">
-            Protect what matters most! Get complete security for your family with our premium
-            one-year subscription—now for just $69.99. Safeguard unlimited devices today and
-            enjoy peace of mind with unbeatable protection.
+            Protect your entire family with our comprehensive security suite. Now offering two flexible
+            plans: Annual subscription at $99.99 or one-time lifetime payment at $89.99. Limited time
+            offer - Get 30% off the annual plan today!
           </p>
           <button
             onClick={scrollToPricing}
             className="bg-green-500 hover:bg-green-600 text-white font-bold py-3 px-6 rounded-full transition-colors transform hover:scale-105 duration-200"
           >
-            Get Started
+            View Our Plans
           </button>
         </div>
       </section>
@@ -80,28 +80,43 @@ const Index = () => {
         </div>
       </section>
       <section className="py-24 bg-gray-100" id="pricing">
-        <h3 className="text-4xl font-bold text-center mb-12">Exclusive Offer</h3>
+        <h3 className="text-4xl font-bold text-center mb-6">Choose Your Protection Plan</h3>
+        <p className="text-xl text-center text-gray-600 max-w-3xl mx-auto mb-12">
+          Select the plan that best fits your needs. Both plans include our complete suite of security features,
+          protecting unlimited devices for your entire family.
+        </p>
         <div className="max-w-5xl mx-auto px-4">
           {plans.map((plan, index) => (
-            <div key={index} className="mb-12 flex flex-col md:flex-row items-center justify-between gap-8">
-              <div className="w-full md:w-1/2 rounded-lg overflow-hidden shadow-lg">
+            <div key={index} className="mb-12 flex flex-col md:flex-row items-center justify-between gap-8 bg-white rounded-xl overflow-hidden shadow-lg hover:shadow-xl transition-shadow duration-300">
+              <div className="w-full md:w-1/2">
                 <img
                   src="https://storage.googleapis.com/a1aa/image/F3PyC2QSb-V5v8pbkEFqHZZtud8hlQSmgDknRG7YCNk.jpg"
                   alt="McAfee protection on various devices"
                   className="w-full h-auto object-cover"
                 />
               </div>
-              <div className="w-full md:w-1/2 text-center md:text-left bg-white p-8 rounded-lg shadow-lg">
-                <p className="text-xl mb-8">
-                  {plan.description}
-                  <strong className="text-2xl block mt-2">${plan.price}</strong>
-                </p>
+              <div className="w-full md:w-1/2 p-8">
+                <h4 className="text-2xl font-bold mb-4">
+                  {plan.type === "yearly" ? "Annual Protection Plan" : "Lifetime Protection Plan"}
+                </h4>
+                <p className="text-gray-600 mb-6">{plan.description}</p>
+                <div className="mb-6">
+                  <span className="text-3xl font-bold text-red-600">${plan.price}</span>
+                  {plan.type === "yearly" && (
+                    <span className="text-sm text-gray-500 ml-2">per year</span>
+                  )}
+                </div>
                 <button
                   onClick={() => handleCheckout(plan.type as "yearly" | "lifetime")}
-                  className="bg-green-500 hover:bg-green-600 text-white font-bold py-3 px-6 rounded-full transition-colors"
+                  className="w-full bg-green-500 hover:bg-green-600 text-white font-bold py-3 px-6 rounded-full transition-all transform hover:scale-105 duration-200"
                 >
-                  Checkout Now
+                  Get Protected Now
                 </button>
+                {plan.type === "yearly" && (
+                  <p className="text-sm text-green-600 mt-4">
+                    Limited Time: Get 30% off - Save $30 Today!
+                  </p>
+                )}
               </div>
             </div>
           ))}
@@ -269,40 +284,40 @@ const Index = () => {
 const features = [
   {
     title: "Advanced Protection",
-    description: "Keep your devices safe from viruses, malware, and online threats.",
+    description: "Keep your devices safe from viruses, malware, and online threats with our industry-leading security engine.",
   },
   {
     title: "Privacy First",
-    description: "Enjoy secure browsing and protection for your personal data.",
+    description: "Enhanced privacy features including VPN service and secure browsing to protect your personal data.",
   },
   {
     title: "Multi-Device Support",
-    description: "Protect unlimited devices with one convenient subscription.",
+    description: "Protect unlimited devices with one subscription - perfect for families with multiple computers, phones, and tablets.",
   },
   {
     title: "Optimized Performance",
-    description: "Keep your devices running at peak performance with lightweight security.",
+    description: "Our lightweight security solution ensures your devices run smoothly without compromising protection.",
   },
   {
     title: "24/7 Customer Support",
-    description: "Get assistance whenever you need it with our dedicated support team.",
+    description: "Access our dedicated premium support team anytime, anywhere, with priority response times.",
   },
   {
     title: "Identity Theft Protection",
-    description: "Safeguard your personal information against identity theft.",
+    description: "Advanced identity monitoring and alerts to protect your personal information from theft and fraud.",
   },
 ];
 
 const plans = [
   {
     type: "yearly",
-    description: "Trusted by families worldwide. Our one-year subscription provides cutting-edge protection for unlimited devices at only",
-    price: "69.99",
+    description: "Save big with our annual subscription! Get premium protection for unlimited devices with our most popular plan. Includes VPN service and identity protection at only",
+    price: "99.99",
   },
   {
     type: "lifetime",
-    description: "Or choose our one-time payment option for lifetime protection at only",
-    price: "119.99",
+    description: "One-time payment for lifetime protection! Get all premium features forever with no recurring charges at only",
+    price: "89.99",
   },
 ];
 
