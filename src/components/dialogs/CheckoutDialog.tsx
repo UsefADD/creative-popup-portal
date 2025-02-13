@@ -10,6 +10,8 @@ interface CheckoutDialogProps {
 }
 
 export const CheckoutDialog = ({ open, onOpenChange, selectedPlan, onPurchase }: CheckoutDialogProps) => {
+  const isMonthlyPlan = selectedPlan === "lifetime"; // Using "lifetime" type for monthly plan
+  
   return (
     <Dialog open={open} onOpenChange={onOpenChange}>
       <DialogContent className="max-w-2xl">
@@ -38,22 +40,22 @@ export const CheckoutDialog = ({ open, onOpenChange, selectedPlan, onPurchase }:
                 <td className="p-4">
                   <div className="font-semibold">McAfee Family Protection</div>
                   <div className="text-sm text-gray-600">
-                    {selectedPlan === "yearly" ? "1 Year Subscription" : "Lifetime Access"}
+                    {isMonthlyPlan ? "Monthly Subscription" : "1 Year Subscription"}
                   </div>
-                  {selectedPlan === "yearly" && (
+                  {!isMonthlyPlan && (
                     <div className="text-green-600 text-sm font-semibold mt-1">
                       30% Welcome Discount Applied!
                     </div>
                   )}
                 </td>
                 <td className="text-right p-4">
-                  {selectedPlan === "yearly" ? (
+                  {!isMonthlyPlan ? (
                     <div>
                       <span className="line-through text-gray-500">$99.99</span>
                       <div className="text-green-600 font-bold">$69.99</div>
                     </div>
                   ) : (
-                    <div>$89.99</div>
+                    <div className="font-bold">$9.99</div>
                   )}
                 </td>
               </tr>
@@ -62,7 +64,7 @@ export const CheckoutDialog = ({ open, onOpenChange, selectedPlan, onPurchase }:
               <tr className="border-t">
                 <th className="text-left p-4">Total</th>
                 <td className="text-right p-4 font-bold text-lg">
-                  ${selectedPlan === "yearly" ? "69.99" : "89.99"}
+                  ${isMonthlyPlan ? "9.99" : "69.99"}
                 </td>
               </tr>
             </tfoot>
