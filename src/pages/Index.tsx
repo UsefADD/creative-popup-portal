@@ -1,3 +1,4 @@
+
 import { useState, useEffect } from "react";
 import { useToast } from "@/hooks/use-toast";
 import { WelcomeDialog } from "@/components/dialogs/WelcomeDialog";
@@ -147,10 +148,12 @@ const Index = () => {
 
       <footer className="bg-red-600 text-white text-center py-6">
         <p>
-          © 2024 McAfee. All rights reserved. |{" "}
+          © 2024 McAfee. All rights reserved.{" "}
           <button
             onClick={() => setShowPrivacyDialog(true)}
-            className="underline hover:text-gray-200 transition-colors"
+            className="underline hover:text-gray-200 transition-colors focus:outline-none"
+            type="button"
+            aria-label="Open Privacy Policy"
           >
             Privacy Policy
           </button>
