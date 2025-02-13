@@ -37,11 +37,11 @@ export const WelcomeDialog = ({ open, onOpenChange, onScrollToPricing }: Welcome
               <AlertCircle className="w-12 h-12 text-red-600 mx-auto" />
             </div>
             <h3 className="text-3xl font-bold text-red-600 mb-4">
-              Save 30% on Annual Protection!
+              Monthly Protection Plan
             </h3>
             <div className="bg-white p-4 rounded-lg mb-6">
               <p className="text-gray-700 text-lg mb-4">
-                Subscribe now and get our complete security package at an incredible discount:
+                Subscribe monthly and get our complete security package:
               </p>
               <div className="space-y-3 text-left mb-4">
                 <div className="flex items-center text-gray-700">
@@ -59,10 +59,9 @@ export const WelcomeDialog = ({ open, onOpenChange, onScrollToPricing }: Welcome
               </div>
               <div className="text-center">
                 <div className="text-2xl font-bold text-red-600">
-                  <span className="line-through text-gray-500">$99.99/year</span>
-                  <span className="ml-2">$69.99/year</span>
+                  <span className="text-2xl">Only $9.99/month</span>
                 </div>
-                <p className="text-sm text-green-600 mt-1">Save $30 with this limited-time offer!</p>
+                <p className="text-sm text-green-600 mt-1">Flexible monthly billing - Cancel anytime!</p>
               </div>
             </div>
             <button
@@ -70,12 +69,12 @@ export const WelcomeDialog = ({ open, onOpenChange, onScrollToPricing }: Welcome
               className="bg-red-600 hover:bg-red-700 text-white font-bold py-4 px-8 rounded-full transition-all transform hover:scale-105 duration-200 shadow-lg flex items-center justify-center mx-auto gap-2"
             >
               <CheckCircle className="w-5 h-5" />
-              Claim Your 30% Discount Now
+              Start Your Protection Now
             </button>
           </div>
           <p className="text-sm text-gray-500 flex items-center justify-center gap-1">
             <Lock className="w-4 h-4" />
-            <span>Limited time offer for new customers. 30% discount applies to first year only.</span>
+            <span>No long-term commitment required. Cancel your subscription anytime.</span>
           </p>
         </div>
       </DialogContent>
