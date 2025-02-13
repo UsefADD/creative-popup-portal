@@ -43,14 +43,14 @@ const plans: Array<{
 }> = [
   {
     type: "yearly",
-    description: "Save big with our annual subscription! Get premium protection for unlimited devices with our most popular plan. Includes VPN service and identity protection at only",
+    description: "Get our best value with the annual plan! Protect unlimited devices with our premium security suite including VPN and identity protection.",
     price: "69.99",
     originalPrice: "99.99",
     discount: "30"
   },
   {
     type: "lifetime",
-    description: "Subscribe monthly to get premium protection for unlimited devices. Perfect for those who prefer flexible payment options. Includes all premium features at only",
+    description: "Flexible monthly protection for unlimited devices. Includes all premium security features and regular updates.",
     price: "14.99"
   }
 ];
@@ -86,15 +86,11 @@ const Index = () => {
   const { toast } = useToast();
 
   useEffect(() => {
-    // Check if the welcome dialog has been shown before
     const hasSeenWelcome = localStorage.getItem("hasSeenWelcome");
     
-    // Show the welcome dialog if it hasn't been shown before
     if (!hasSeenWelcome) {
-      // Small delay to ensure smooth loading
       const timer = setTimeout(() => {
         setShowWelcomeDialog(true);
-        // Mark as seen in localStorage
         localStorage.setItem("hasSeenWelcome", "true");
       }, 1000);
 
@@ -140,7 +136,7 @@ const Index = () => {
           <h2 className="text-5xl font-bold mb-4">Complete Family Security Solution</h2>
           <p className="text-xl mb-8">
             Protect your entire family with our comprehensive security suite. Now offering two flexible
-            plans: Annual subscription at $99.99 or one-time lifetime payment at $89.99. Limited time
+            plans: Annual subscription at $99.99 or monthly plan at $14.99. Limited time
             offer - Get 30% off the annual plan today!
           </p>
           <button
