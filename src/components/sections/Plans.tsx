@@ -3,6 +3,8 @@ interface Plan {
   type: "yearly" | "lifetime";
   description: string;
   price: string;
+  originalPrice?: string;
+  discount?: string;
 }
 
 interface PlansProps {
@@ -29,13 +31,28 @@ export const Plans = ({ plans, onCheckout }: PlansProps) => (
           </div>
           <div className="w-full md:w-1/2 p-8">
             <h4 className="text-2xl font-bold mb-4">
-              {plan.type === "yearly" ? "Annual Protection Plan" : "Lifetime Protection Plan"}
+              {index === 0 ? "Annual Protection Plan" : "Monthly Protection Plan"}
             </h4>
             <p className="text-gray-600 mb-6">{plan.description}</p>
             <div className="mb-6">
-              <span className="text-3xl font-bold text-red-600">${plan.price}</span>
-              {plan.type === "yearly" && (
-                <span className="text-sm text-gray-500 ml-2">per year</span>
+              {plan.originalPrice ? (
+                <div className="space-y-2">
+                  <div className="flex items-center gap-2">
+                    <span className="text-3xl font-bold text-red-600">${plan.price}</span>
+                    <span className="text-sm text-gray-500">{index === 0 ? "per year" : "per month"}</span>
+                  </div>
+                  <div className="flex items-center gap-2">
+                    <span className="line-through text-gray-500">${plan.originalPrice}</span>
+                    <span className="bg-green-100 text-green-700 px-2 py-1 rounded-full text-sm font-semibold">
+                      Save {plan.discount}%
+                    </span>
+                  </div>
+                </div>
+              ) : (
+                <div className="flex items-center gap-2">
+                  <span className="text-3xl font-bold text-red-600">${plan.price}</span>
+                  <span className="text-sm text-gray-500">{index === 0 ? "per year" : "per month"}</span>
+                </div>
               )}
             </div>
             <button
@@ -44,9 +61,9 @@ export const Plans = ({ plans, onCheckout }: PlansProps) => (
             >
               Get Protected Now
             </button>
-            {plan.type === "yearly" && (
+            {plan.discount && (
               <p className="text-sm text-green-600 mt-4">
-                Limited Time: Get 30% off - Save $30 Today!
+                Limited Time: Get {plan.discount}% off - Save ${Number(plan.originalPrice) - Number(plan.price)} Today!
               </p>
             )}
           </div>
