@@ -83,12 +83,19 @@ const Index = () => {
   const { toast } = useToast();
 
   useEffect(() => {
+    // Check if the welcome dialog has been shown before
     const hasSeenWelcome = localStorage.getItem("hasSeenWelcome");
+    
+    // Show the welcome dialog if it hasn't been shown before
     if (!hasSeenWelcome) {
-      setTimeout(() => {
+      // Small delay to ensure smooth loading
+      const timer = setTimeout(() => {
         setShowWelcomeDialog(true);
+        // Mark as seen in localStorage
         localStorage.setItem("hasSeenWelcome", "true");
-      }, 1500);
+      }, 1000);
+
+      return () => clearTimeout(timer);
     }
   }, []);
 
