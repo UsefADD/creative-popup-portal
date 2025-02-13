@@ -22,6 +22,13 @@ const Index = () => {
     setShowCheckoutDialog(false);
   };
 
+  const scrollToPricing = () => {
+    const pricingSection = document.getElementById('pricing');
+    if (pricingSection) {
+      pricingSection.scrollIntoView({ behavior: 'smooth' });
+    }
+  };
+
   return (
     <div className="min-h-screen bg-gray-100 text-gray-800">
       <header className="bg-red-600 text-white p-6 text-center shadow-md">
@@ -42,8 +49,8 @@ const Index = () => {
             enjoy peace of mind with unbeatable protection.
           </p>
           <button
-            onClick={() => handleCheckout("yearly")}
-            className="bg-green-500 hover:bg-green-600 text-white font-bold py-3 px-6 rounded-full transition-colors"
+            onClick={scrollToPricing}
+            className="bg-green-500 hover:bg-green-600 text-white font-bold py-3 px-6 rounded-full transition-colors transform hover:scale-105 duration-200"
           >
             Get Started
           </button>
@@ -60,7 +67,7 @@ const Index = () => {
           ))}
         </div>
       </section>
-      <section className="py-24 bg-gray-100">
+      <section className="py-24 bg-gray-100" id="pricing">
         <h3 className="text-4xl font-bold text-center mb-12">Exclusive Offer</h3>
         <div className="max-w-5xl mx-auto px-4">
           {plans.map((plan, index) => (
@@ -118,7 +125,7 @@ const Index = () => {
       <Dialog open={showPrivacyDialog} onOpenChange={setShowPrivacyDialog}>
         <DialogContent className="max-w-2xl max-h-[80vh] overflow-y-auto">
           <DialogHeader>
-            <DialogTitle>Privacy Policy</DialogTitle>
+            <DialogTitle className="text-2xl font-bold">Privacy Policy</DialogTitle>
             <button
               onClick={() => setShowPrivacyDialog(false)}
               className="absolute right-4 top-4 rounded-sm opacity-70 ring-offset-background transition-opacity hover:opacity-100 focus:outline-none focus:ring-2 focus:ring-ring focus:ring-offset-2 disabled:pointer-events-none data-[state=open]:bg-accent data-[state=open]:text-muted-foreground"
@@ -134,7 +141,10 @@ const Index = () => {
       <Dialog open={showCheckoutDialog} onOpenChange={setShowCheckoutDialog}>
         <DialogContent className="max-w-2xl">
           <DialogHeader>
-            <DialogTitle>YOUR ORDER</DialogTitle>
+            <DialogTitle className="text-2xl font-bold">Complete Your Order</DialogTitle>
+            <DialogDescription className="text-gray-600">
+              You're just one step away from protecting your family
+            </DialogDescription>
             <button
               onClick={() => setShowCheckoutDialog(false)}
               className="absolute right-4 top-4 rounded-sm opacity-70 ring-offset-background transition-opacity hover:opacity-100 focus:outline-none focus:ring-2 focus:ring-ring focus:ring-offset-2 disabled:pointer-events-none data-[state=open]:bg-accent data-[state=open]:text-muted-foreground"
@@ -153,7 +163,10 @@ const Index = () => {
               <tbody>
                 <tr>
                   <td className="p-4">
-                    McAfee Family Protection - {selectedPlan === "yearly" ? "Yearly" : "Lifetime"}
+                    <div className="font-semibold">McAfee Family Protection</div>
+                    <div className="text-sm text-gray-600">
+                      {selectedPlan === "yearly" ? "1 Year Subscription" : "Lifetime Access"}
+                    </div>
                   </td>
                   <td className="text-right p-4">
                     ${selectedPlan === "yearly" ? "69.99" : "119.99"}
@@ -163,7 +176,7 @@ const Index = () => {
               <tfoot>
                 <tr>
                   <th className="text-left p-4">Total</th>
-                  <td className="text-right p-4 font-bold">
+                  <td className="text-right p-4 font-bold text-lg">
                     ${selectedPlan === "yearly" ? "69.99" : "119.99"}
                   </td>
                 </tr>
@@ -172,13 +185,13 @@ const Index = () => {
             <div className="bg-blue-100 p-4 rounded-lg mb-8">
               <h3 className="text-blue-800 font-bold mb-2">📧 Digital Delivery Information</h3>
               <p className="text-blue-700">
-                Your license key and download instructions will be sent to your email address.
+                Your license key and download instructions will be sent to your email address immediately after purchase.
               </p>
             </div>
             <div className="flex justify-end">
               <button
                 onClick={handlePurchase}
-                className="bg-green-500 hover:bg-green-600 text-white font-bold py-3 px-6 rounded-full transition-colors"
+                className="bg-green-500 hover:bg-green-600 text-white font-bold py-3 px-8 rounded-full transition-all transform hover:scale-105 duration-200"
               >
                 Complete Purchase
               </button>
