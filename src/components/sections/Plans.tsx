@@ -20,14 +20,14 @@ export const Plans = ({ plans, onCheckout }: PlansProps) => (
       protecting unlimited devices for your entire family.
     </p>
     <div className="max-w-5xl mx-auto px-4">
-      {plans.map((plan, index) => (
+      {plans.map((plan) => (
         <div 
-          key={index} 
+          key={plan.type} 
           className={`mb-12 flex flex-col md:flex-row items-center justify-between gap-8 bg-white rounded-xl overflow-hidden shadow-lg hover:shadow-xl transition-shadow duration-300 relative
-            ${plan.type === "yearly" ? 'border-2 border-blue-600' : ''}`}
+            ${plan.type === "yearly" ? 'border-2 border-[#1652F0]' : ''}`}
         >
           {plan.type === "yearly" && (
-            <div className="absolute -top-4 left-1/2 transform -translate-x-1/2 bg-gradient-to-r from-blue-600 to-blue-700 text-white px-6 py-1 rounded-full font-semibold text-sm shadow-md">
+            <div className="absolute -top-4 left-1/2 transform -translate-x-1/2 bg-[#1652F0] text-white px-8 py-2 rounded-full font-semibold text-base shadow-md">
               Recommended Plan
             </div>
           )}
@@ -42,11 +42,11 @@ export const Plans = ({ plans, onCheckout }: PlansProps) => (
             />
           </div>
           <div className={`w-full md:w-1/2 p-8 ${plan.type === "yearly" ? 'bg-blue-50' : ''}`}>
-            <h4 className={`text-2xl font-bold mb-4 ${plan.type === "yearly" ? 'text-blue-900' : ''}`}>
+            <h4 className="text-3xl font-bold mb-4 text-[#1652F0]">
               {plan.type === "yearly" ? (
                 <div className="flex items-center gap-2">
                   Annual Protection Plan
-                  <span className="bg-blue-100 text-blue-800 px-3 py-1 rounded-full text-sm">
+                  <span className="bg-blue-100 text-[#1652F0] px-3 py-1 rounded-full text-sm">
                     Premium
                   </span>
                 </div>
@@ -59,14 +59,14 @@ export const Plans = ({ plans, onCheckout }: PlansProps) => (
               {plan.originalPrice ? (
                 <div className="space-y-2">
                   <div className="flex items-center gap-2">
-                    <span className={`text-3xl font-bold ${plan.type === "yearly" ? 'text-blue-700' : 'text-gray-900'}`}>
+                    <span className={`text-3xl font-bold ${plan.type === "yearly" ? 'text-[#1652F0]' : 'text-gray-900'}`}>
                       ${plan.price}
                     </span>
                     <span className="text-sm text-gray-500">{plan.type === "yearly" ? "per year" : "per month"}</span>
                   </div>
                   <div className="flex items-center gap-2">
                     <span className="line-through text-gray-500">${plan.originalPrice}</span>
-                    <span className={`${plan.type === "yearly" ? 'bg-blue-100 text-blue-800' : 'bg-gray-100 text-gray-800'} px-2 py-1 rounded-full text-sm font-semibold`}>
+                    <span className={`${plan.type === "yearly" ? 'bg-blue-100 text-[#1652F0]' : 'bg-gray-100 text-gray-800'} px-2 py-1 rounded-full text-sm font-semibold`}>
                       Save {plan.discount}%
                     </span>
                   </div>
@@ -82,19 +82,19 @@ export const Plans = ({ plans, onCheckout }: PlansProps) => (
               onClick={() => onCheckout(plan.type)}
               className={`w-full font-bold py-3 px-6 rounded-lg transition-all transform hover:scale-105 duration-200 
                 ${plan.type === "yearly"
-                  ? 'bg-gradient-to-r from-blue-600 to-blue-700 hover:from-blue-700 hover:to-blue-800 text-white shadow-lg' 
+                  ? 'bg-[#1652F0] hover:bg-blue-700 text-white shadow-lg' 
                   : 'bg-gray-800 hover:bg-gray-900 text-white'}`}
             >
               {plan.type === "yearly" ? "Secure Your Family Now" : "Get Started"}
             </button>
             {plan.discount && (
-              <p className={`text-sm mt-4 ${plan.type === "yearly" ? 'text-blue-700' : 'text-gray-600'}`}>
+              <p className={`text-sm mt-4 ${plan.type === "yearly" ? 'text-[#1652F0]' : 'text-gray-600'}`}>
                 Limited Time: Get {plan.discount}% off - Save ${Number(plan.originalPrice) - Number(plan.price)} Today!
               </p>
             )}
             {plan.type === "yearly" && (
-              <div className="mt-6 p-4 bg-gradient-to-br from-blue-50 to-blue-100 rounded-lg border border-blue-200">
-                <p className="text-sm text-blue-800 font-medium">
+              <div className="mt-6 p-4 bg-blue-50 rounded-lg border border-blue-200">
+                <p className="text-sm text-[#1652F0] font-medium">
                   ✓ Enterprise-grade security features
                   <br />
                   ✓ Maximum cost savings
