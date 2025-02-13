@@ -49,9 +49,9 @@ const plans: Array<{
     discount: "30"
   },
   {
-    type: "yearly",
+    type: "lifetime",
     description: "Subscribe monthly to get premium protection for unlimited devices. Perfect for those who prefer flexible payment options. Includes all premium features at only",
-    price: "9.99"
+    price: "14.99"
   }
 ];
 
