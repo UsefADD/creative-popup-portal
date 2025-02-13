@@ -1,7 +1,7 @@
 import { useState, useEffect } from "react";
 import { Dialog, DialogContent, DialogDescription, DialogHeader, DialogTitle } from "@/components/ui/dialog";
 import { useToast } from "@/hooks/use-toast";
-import { X } from "lucide-react";
+import { X, Shield, Lock, CheckCircle, AlertCircle } from "lucide-react";
 
 const Index = () => {
   const [showPrivacyDialog, setShowPrivacyDialog] = useState(false);
@@ -16,7 +16,7 @@ const Index = () => {
       setTimeout(() => {
         setShowWelcomeDialog(true);
         localStorage.setItem("hasSeenWelcome", "true");
-      }, 1500); // Delay to let the page load first
+      }, 1500);
     }
   }, []);
 
@@ -152,7 +152,10 @@ const Index = () => {
       <Dialog open={showPrivacyDialog} onOpenChange={setShowPrivacyDialog}>
         <DialogContent className="max-w-2xl max-h-[80vh] overflow-y-auto">
           <DialogHeader>
-            <DialogTitle className="text-2xl font-bold">Privacy Policy</DialogTitle>
+            <div className="flex items-center gap-2 mb-2">
+              <Shield className="w-6 h-6 text-red-600" />
+              <DialogTitle className="text-2xl font-bold">Privacy Policy</DialogTitle>
+            </div>
             <DialogDescription className="text-gray-600">
               Last updated: March 2024
             </DialogDescription>
@@ -163,7 +166,16 @@ const Index = () => {
               <X className="h-4 w-4" />
             </button>
           </DialogHeader>
-          <div className="mt-4 space-y-4">
+          <div className="mt-4 space-y-4 text-gray-700">
+            <div className="bg-blue-50 p-4 rounded-lg mb-6">
+              <div className="flex items-center gap-2 mb-2">
+                <Lock className="w-5 h-5 text-blue-600" />
+                <h3 className="font-bold text-blue-800">Your Privacy Matters</h3>
+              </div>
+              <p className="text-blue-900">
+                We are committed to protecting your personal information and ensuring your online safety.
+              </p>
+            </div>
             <PrivacyContent />
           </div>
         </DialogContent>
@@ -244,9 +256,12 @@ const Index = () => {
       <Dialog open={showWelcomeDialog} onOpenChange={setShowWelcomeDialog}>
         <DialogContent className="max-w-xl">
           <DialogHeader>
-            <DialogTitle className="text-2xl font-bold text-center">
-              🎉 Welcome to McAfee Family Protection!
-            </DialogTitle>
+            <div className="flex items-center justify-center gap-2 mb-2">
+              <Shield className="w-8 h-8 text-red-600" />
+              <DialogTitle className="text-2xl font-bold text-center">
+                Welcome to McAfee Family Protection!
+              </DialogTitle>
+            </div>
             <button
               onClick={() => setShowWelcomeDialog(false)}
               className="absolute right-4 top-4 rounded-sm opacity-70 ring-offset-background transition-opacity hover:opacity-100 focus:outline-none focus:ring-2 focus:ring-ring focus:ring-offset-2 disabled:pointer-events-none data-[state=open]:bg-accent data-[state=open]:text-muted-foreground"
@@ -255,45 +270,42 @@ const Index = () => {
             </button>
           </DialogHeader>
           <div className="mt-4 text-center">
-            <div className="bg-red-50 p-6 rounded-lg mb-4">
-              <h3 className="text-3xl font-bold text-red-600 mb-2">Special First-Time Visitor Offer!</h3>
-              <p className="text-gray-700 mb-4">
+            <div className="bg-gradient-to-br from-red-50 to-red-100 p-6 rounded-lg mb-4 shadow-sm">
+              <AlertCircle className="w-12 h-12 text-red-600 mx-auto mb-4" />
+              <h3 className="text-3xl font-bold text-red-600 mb-4">Special First-Time Visitor Offer!</h3>
+              <p className="text-gray-700 mb-6">
                 Welcome! As a special offer for new visitors, we're offering our premium family protection package at an incredible discount.
               </p>
               <div className="space-y-4 text-left mb-6">
-                <div className="flex items-center text-gray-700">
-                  <span className="text-green-500 mr-3">✓</span>
-                  <span>Complete protection for unlimited devices</span>
-                </div>
-                <div className="flex items-center text-gray-700">
-                  <span className="text-green-500 mr-3">✓</span>
-                  <span>Advanced virus & malware protection</span>
-                </div>
-                <div className="flex items-center text-gray-700">
-                  <span className="text-green-500 mr-3">✓</span>
-                  <span>24/7 premium customer support</span>
-                </div>
+                {[
+                  "Complete protection for unlimited devices",
+                  "Advanced virus & malware protection",
+                  "24/7 premium customer support"
+                ].map((feature, index) => (
+                  <div key={index} className="flex items-center text-gray-700">
+                    <CheckCircle className="w-5 h-5 text-green-500 mr-3" />
+                    <span>{feature}</span>
+                  </div>
+                ))}
               </div>
-              <div className="text-2xl font-bold text-red-600 mb-4">
-                <div className="mb-2">Annual Plan Special Offer:</div>
-                <span className="line-through text-gray-500">$99.99</span>
-                <span className="ml-2">$69.99/year</span>
+              <div className="bg-white p-4 rounded-lg mb-6 shadow-sm">
+                <div className="text-2xl font-bold text-red-600">
+                  <div className="mb-2">Annual Plan Special Offer:</div>
+                  <span className="line-through text-gray-500">$99.99</span>
+                  <span className="ml-2">$69.99/year</span>
+                </div>
               </div>
               <button
-                onClick={() => {
-                  setShowWelcomeDialog(false);
-                  const pricingSection = document.getElementById('pricing');
-                  if (pricingSection) {
-                    pricingSection.scrollIntoView({ behavior: 'smooth' });
-                  }
-                }}
-                className="bg-red-600 hover:bg-red-700 text-white font-bold py-3 px-8 rounded-full transition-all transform hover:scale-105 duration-200"
+                onClick={scrollToPricing}
+                className="bg-red-600 hover:bg-red-700 text-white font-bold py-4 px-8 rounded-full transition-all transform hover:scale-105 duration-200 shadow-lg flex items-center justify-center mx-auto gap-2"
               >
-                View Special Offer
+                <CheckCircle className="w-5 h-5" />
+                Get Protected Now
               </button>
             </div>
-            <p className="text-sm text-gray-500">
-              *Limited time offer for new customers. Discount applies to first year only.
+            <p className="text-sm text-gray-500 flex items-center justify-center gap-1">
+              <Lock className="w-4 h-4" />
+              <span>Limited time offer for new customers. Discount applies to first year only.</span>
             </p>
           </div>
         </DialogContent>
