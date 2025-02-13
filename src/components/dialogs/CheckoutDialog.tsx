@@ -44,14 +44,14 @@ export const CheckoutDialog = ({ open, onOpenChange, selectedPlan, onPurchase }:
                   </div>
                   {!isMonthlyPlan && (
                     <div className="text-green-600 text-sm font-semibold mt-1">
-                      30% Welcome Discount Applied!
+                      53% Welcome Discount Applied!
                     </div>
                   )}
                 </td>
                 <td className="text-right p-4">
                   {!isMonthlyPlan ? (
                     <div>
-                      <span className="line-through text-gray-500">$99.99</span>
+                      <span className="line-through text-gray-500">$149.99</span>
                       <div className="text-green-600 font-bold">$69.99</div>
                     </div>
                   ) : (

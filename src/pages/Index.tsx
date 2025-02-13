@@ -45,8 +45,8 @@ const plans: Array<{
     type: "yearly",
     description: "Get our best value with the annual plan! Protect unlimited devices with our premium security suite including VPN and identity protection.",
     price: "69.99",
-    originalPrice: "99.99",
-    discount: "30"
+    originalPrice: "149.99",
+    discount: "53"
   },
   {
     type: "lifetime",
@@ -136,8 +136,8 @@ const Index = () => {
           <h2 className="text-5xl font-bold mb-4">Complete Family Security Solution</h2>
           <p className="text-xl mb-8">
             Protect your entire family with our comprehensive security suite. Now offering two flexible
-            plans: Annual subscription at $99.99 or monthly plan at $14.99. Limited time
-            offer - Get 30% off the annual plan today!
+            plans: Annual subscription at $149.99 or monthly plan at $14.99. Limited time
+            offer - Get 53% off the annual plan today!
           </p>
           <button
             onClick={scrollToPricing}
