@@ -245,7 +245,7 @@ const Index = () => {
         <DialogContent className="max-w-xl">
           <DialogHeader>
             <DialogTitle className="text-2xl font-bold text-center">
-              🎉 Exclusive Welcome Offer!
+              🎉 Welcome to McAfee Family Protection!
             </DialogTitle>
             <button
               onClick={() => setShowWelcomeDialog(false)}
@@ -256,23 +256,44 @@ const Index = () => {
           </DialogHeader>
           <div className="mt-4 text-center">
             <div className="bg-red-50 p-6 rounded-lg mb-4">
-              <h3 className="text-3xl font-bold text-red-600 mb-2">Save 30% Today!</h3>
+              <h3 className="text-3xl font-bold text-red-600 mb-2">Special First-Time Visitor Offer!</h3>
               <p className="text-gray-700 mb-4">
-                Subscribe to our annual plan now and get premium protection for your entire family at an incredible discount!
+                Welcome! As a special offer for new visitors, we're offering our premium family protection package at an incredible discount.
               </p>
+              <div className="space-y-4 text-left mb-6">
+                <div className="flex items-center text-gray-700">
+                  <span className="text-green-500 mr-3">✓</span>
+                  <span>Complete protection for unlimited devices</span>
+                </div>
+                <div className="flex items-center text-gray-700">
+                  <span className="text-green-500 mr-3">✓</span>
+                  <span>Advanced virus & malware protection</span>
+                </div>
+                <div className="flex items-center text-gray-700">
+                  <span className="text-green-500 mr-3">✓</span>
+                  <span>24/7 premium customer support</span>
+                </div>
+              </div>
               <div className="text-2xl font-bold text-red-600 mb-4">
+                <div className="mb-2">Annual Plan Special Offer:</div>
                 <span className="line-through text-gray-500">$99.99</span>
                 <span className="ml-2">$69.99/year</span>
               </div>
               <button
-                onClick={scrollToPricing}
+                onClick={() => {
+                  setShowWelcomeDialog(false);
+                  const pricingSection = document.getElementById('pricing');
+                  if (pricingSection) {
+                    pricingSection.scrollIntoView({ behavior: 'smooth' });
+                  }
+                }}
                 className="bg-red-600 hover:bg-red-700 text-white font-bold py-3 px-8 rounded-full transition-all transform hover:scale-105 duration-200"
               >
-                Claim Discount Now
+                View Special Offer
               </button>
             </div>
             <p className="text-sm text-gray-500">
-              *Limited time offer. Discount applies to first year only.
+              *Limited time offer for new customers. Discount applies to first year only.
             </p>
           </div>
         </DialogContent>
