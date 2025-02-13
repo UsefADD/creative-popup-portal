@@ -1,3 +1,4 @@
+
 import { useState, useEffect } from "react";
 import { useToast } from "@/hooks/use-toast";
 import { WelcomeDialog } from "@/components/dialogs/WelcomeDialog";
@@ -50,13 +51,13 @@ const plans: Plan[] = [
     price: "69.99",
     originalPrice: "149.99",
     discount: "53",
-    checkoutUrl: "https://whop.com/checkout/plan_Bt5X2CeIk70aY?d2c=true"
+    checkoutUrl: "https://payment.link/yearly-plan"
   },
   {
     type: "lifetime",
     description: "Flexible monthly protection for unlimited devices. Includes all premium security features and regular updates.",
     price: "14.99",
-    checkoutUrl: "https://whop.com/checkout/plan_06H1H01NqO1ue?d2c=true"
+    checkoutUrl: "https://payment.link/monthly-plan"
   }
 ];
 
