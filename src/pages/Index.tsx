@@ -65,22 +65,22 @@ const plans: Plan[] = [
 const testimonials = [
   {
     name: "Sarah L.",
-    quote: "McAfee has been a lifesaver! I feel secure knowing all our family devices are protected.",
+    quote: "As a mother of three, McAfee gives me peace of mind knowing all our devices are protected. The parental controls are fantastic!",
     image: "https://storage.googleapis.com/a1aa/image/qEVZhxzZ9Ik1kAlHcOQiQpSvSxvhWf_zwjK4Ce2PWN4.jpg",
   },
   {
     name: "John D.",
-    quote: "The setup was seamless, and now all our devices are secure. Highly recommended!",
+    quote: "Setup was seamless across all our family devices. The VPN feature is excellent for when we're traveling. Best security investment!",
     image: "https://storage.googleapis.com/a1aa/image/NDLKyBMUaptvrBieksu2fZCETEUWwEbLuF8mVSONlyY.jpg",
   },
   {
     name: "Emily K.",
-    quote: "Exceptional security and peace of mind for the entire family. A must-have subscription!",
+    quote: "The identity protection features caught a potential fraud attempt on my account. McAfee's customer support was incredibly helpful!",
     image: "https://storage.googleapis.com/a1aa/image/Y-09LNkV_EDixOUG-iLukcduy3OAUzFrfz2LPH7UUHo.jpg",
   },
   {
     name: "Michael T.",
-    quote: "Great value for the features offered. McAfee has exceeded my expectations.",
+    quote: "We've been using McAfee for 2 years now. The real-time protection and regular updates keep our family's data safe and secure.",
     image: "https://storage.googleapis.com/a1aa/image/kwDjgktleWPB6n0BKHqcgj0MFTQ46cviOkdvg2uNRoI.jpg",
   },
 ];

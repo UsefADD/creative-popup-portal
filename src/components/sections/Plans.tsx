@@ -1,3 +1,4 @@
+
 interface Plan {
   type: "yearly" | "lifetime";
   description: string;
@@ -16,8 +17,7 @@ export const Plans = ({ plans, onCheckout }: PlansProps) => (
   <section className="py-24 bg-gray-100" id="pricing">
     <h3 className="text-4xl font-bold text-center mb-6">Choose Your Protection Plan</h3>
     <p className="text-xl text-center text-gray-600 max-w-3xl mx-auto mb-12">
-      Select the plan that best fits your needs. Both plans include our complete suite of security features,
-      protecting unlimited devices for your entire family.
+      Get complete peace of mind with our comprehensive security suite. Both plans offer identical premium features and protect unlimited devices - choose annual billing for maximum savings, or monthly billing for flexible payments.
     </p>
     <div className="max-w-5xl mx-auto px-4">
       {plans.map((plan) => (
@@ -28,7 +28,7 @@ export const Plans = ({ plans, onCheckout }: PlansProps) => (
         >
           {plan.type === "yearly" && (
             <div className="absolute -top-4 left-1/2 transform -translate-x-1/2 bg-[#1652F0] text-white px-8 py-2 rounded-full font-semibold text-base shadow-md">
-              Recommended Plan
+              Best Value
             </div>
           )}
           <div className="w-full md:w-1/2">
@@ -47,7 +47,7 @@ export const Plans = ({ plans, onCheckout }: PlansProps) => (
                 <div className="flex items-center gap-2">
                   Annual Protection Plan
                   <span className="bg-blue-100 text-[#1652F0] px-3 py-1 rounded-full text-sm">
-                    Premium
+                    Save 53%
                   </span>
                 </div>
               ) : (
