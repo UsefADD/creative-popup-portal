@@ -24,7 +24,10 @@ export const Plans = ({ plans, onCheckout }: PlansProps) => (
         <div key={index} className="mb-12 flex flex-col md:flex-row items-center justify-between gap-8 bg-white rounded-xl overflow-hidden shadow-lg hover:shadow-xl transition-shadow duration-300">
           <div className="w-full md:w-1/2">
             <img
-              src="https://media.mcafeeassets.com/content/dam/npcld/ecommerce/en-us/mcafee-redesign/radio-hero/family-662.png"
+              src={index === 0 
+                ? "https://media.mcafeeassets.com/content/dam/npcld/ecommerce/en-us/mcafee-redesign/radio-hero/family-662.png"
+                : "/lovable-uploads/afbd1709-000b-4a46-8375-15f18d5fc453.png"
+              }
               alt="McAfee Premium Family Protection features"
               className="w-full h-auto object-cover"
             />
