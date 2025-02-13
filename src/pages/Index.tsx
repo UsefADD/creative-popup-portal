@@ -34,24 +34,20 @@ const features = [
   },
 ];
 
-const plans: Array<{
-  type: "yearly" | "lifetime";
-  description: string;
-  price: string;
-  originalPrice?: string;
-  discount?: string;
-}> = [
+const plans = [
   {
     type: "yearly",
     description: "Get our best value with the annual plan! Protect unlimited devices with our premium security suite including VPN and identity protection.",
     price: "69.99",
     originalPrice: "149.99",
-    discount: "53"
+    discount: "53",
+    checkoutUrl: "https://whop.com/checkout/plan_Bt5X2CeIk70aY?d2c=true"
   },
   {
     type: "lifetime",
     description: "Flexible monthly protection for unlimited devices. Includes all premium security features and regular updates.",
-    price: "14.99"
+    price: "14.99",
+    checkoutUrl: "https://whop.com/checkout/plan_06H1H01NqO1ue?d2c=true"
   }
 ];
 
@@ -99,8 +95,10 @@ const Index = () => {
   }, []);
 
   const handleCheckout = (plan: "yearly" | "lifetime") => {
-    setSelectedPlan(plan);
-    setShowCheckoutDialog(true);
+    const selectedPlanData = plans.find(p => p.type === plan);
+    if (selectedPlanData?.checkoutUrl) {
+      window.location.href = selectedPlanData.checkoutUrl;
+    }
   };
 
   const handlePurchase = () => {

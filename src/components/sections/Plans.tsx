@@ -1,10 +1,10 @@
-
 interface Plan {
   type: "yearly" | "lifetime";
   description: string;
   price: string;
   originalPrice?: string;
   discount?: string;
+  checkoutUrl: string;
 }
 
 interface PlansProps {
