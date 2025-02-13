@@ -206,11 +206,11 @@ const Index = () => {
                   <td className="text-right p-4">
                     {selectedPlan === "yearly" ? (
                       <div>
-                        <span className="line-through text-gray-500">$69.99</span>
-                        <div className="text-green-600 font-bold">$48.99</div>
+                        <span className="line-through text-gray-500">$99.99</span>
+                        <div className="text-green-600 font-bold">$69.99</div>
                       </div>
                     ) : (
-                      <div>$119.99</div>
+                      <div>$89.99</div>
                     )}
                   </td>
                 </tr>
@@ -219,7 +219,7 @@ const Index = () => {
                 <tr className="border-t">
                   <th className="text-left p-4">Total</th>
                   <td className="text-right p-4 font-bold text-lg">
-                    ${selectedPlan === "yearly" ? "48.99" : "119.99"}
+                    ${selectedPlan === "yearly" ? "69.99" : "89.99"}
                   </td>
                 </tr>
               </tfoot>
@@ -261,8 +261,8 @@ const Index = () => {
                 Subscribe to our annual plan now and get premium protection for your entire family at an incredible discount!
               </p>
               <div className="text-2xl font-bold text-red-600 mb-4">
-                <span className="line-through text-gray-500">$69.99</span>
-                <span className="ml-2">$48.99/year</span>
+                <span className="line-through text-gray-500">$99.99</span>
+                <span className="ml-2">$69.99/year</span>
               </div>
               <button
                 onClick={scrollToPricing}
