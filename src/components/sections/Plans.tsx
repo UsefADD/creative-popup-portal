@@ -24,11 +24,11 @@ export const Plans = ({ plans, onCheckout }: PlansProps) => (
         <div 
           key={index} 
           className={`mb-12 flex flex-col md:flex-row items-center justify-between gap-8 bg-white rounded-xl overflow-hidden shadow-lg hover:shadow-xl transition-shadow duration-300 relative
-            ${index === 0 ? 'border-2 border-purple-500' : ''}`}
+            ${index === 0 ? 'border-2 border-blue-600' : ''}`}
         >
           {index === 0 && (
-            <div className="absolute -top-4 left-1/2 transform -translate-x-1/2 bg-purple-600 text-white px-6 py-1 rounded-full font-semibold text-sm">
-              Most Popular Choice
+            <div className="absolute -top-4 left-1/2 transform -translate-x-1/2 bg-gradient-to-r from-blue-600 to-blue-700 text-white px-6 py-1 rounded-full font-semibold text-sm shadow-md">
+              Recommended Plan
             </div>
           )}
           <div className="w-full md:w-1/2">
@@ -41,13 +41,13 @@ export const Plans = ({ plans, onCheckout }: PlansProps) => (
               className="w-full h-auto object-cover"
             />
           </div>
-          <div className={`w-full md:w-1/2 p-8 ${index === 0 ? 'bg-purple-50' : ''}`}>
-            <h4 className={`text-2xl font-bold mb-4 ${index === 0 ? 'text-purple-800' : ''}`}>
+          <div className={`w-full md:w-1/2 p-8 ${index === 0 ? 'bg-blue-50' : ''}`}>
+            <h4 className={`text-2xl font-bold mb-4 ${index === 0 ? 'text-blue-900' : ''}`}>
               {index === 0 ? (
                 <div className="flex items-center gap-2">
                   Annual Protection Plan
-                  <span className="bg-purple-100 text-purple-700 px-3 py-1 rounded-full text-sm">
-                    Best Value
+                  <span className="bg-blue-100 text-blue-800 px-3 py-1 rounded-full text-sm">
+                    Premium
                   </span>
                 </div>
               ) : (
@@ -59,47 +59,47 @@ export const Plans = ({ plans, onCheckout }: PlansProps) => (
               {plan.originalPrice ? (
                 <div className="space-y-2">
                   <div className="flex items-center gap-2">
-                    <span className={`text-3xl font-bold ${index === 0 ? 'text-purple-600' : 'text-red-600'}`}>
+                    <span className={`text-3xl font-bold ${index === 0 ? 'text-blue-700' : 'text-gray-900'}`}>
                       ${plan.price}
                     </span>
                     <span className="text-sm text-gray-500">{index === 0 ? "per year" : "per month"}</span>
                   </div>
                   <div className="flex items-center gap-2">
                     <span className="line-through text-gray-500">${plan.originalPrice}</span>
-                    <span className={`${index === 0 ? 'bg-purple-100 text-purple-700' : 'bg-green-100 text-green-700'} px-2 py-1 rounded-full text-sm font-semibold`}>
+                    <span className={`${index === 0 ? 'bg-blue-100 text-blue-800' : 'bg-gray-100 text-gray-800'} px-2 py-1 rounded-full text-sm font-semibold`}>
                       Save {plan.discount}%
                     </span>
                   </div>
                 </div>
               ) : (
                 <div className="flex items-center gap-2">
-                  <span className="text-3xl font-bold text-red-600">${plan.price}</span>
+                  <span className="text-3xl font-bold text-gray-900">${plan.price}</span>
                   <span className="text-sm text-gray-500">{index === 0 ? "per year" : "per month"}</span>
                 </div>
               )}
             </div>
             <button
               onClick={() => onCheckout(plan.type)}
-              className={`w-full font-bold py-3 px-6 rounded-full transition-all transform hover:scale-105 duration-200 
+              className={`w-full font-bold py-3 px-6 rounded-lg transition-all transform hover:scale-105 duration-200 
                 ${index === 0 
-                  ? 'bg-purple-600 hover:bg-purple-700 text-white shadow-lg' 
-                  : 'bg-green-500 hover:bg-green-600 text-white'}`}
+                  ? 'bg-gradient-to-r from-blue-600 to-blue-700 hover:from-blue-700 hover:to-blue-800 text-white shadow-lg' 
+                  : 'bg-gray-800 hover:bg-gray-900 text-white'}`}
             >
-              {index === 0 ? "Get Best Value Now" : "Get Protected Now"}
+              {index === 0 ? "Secure Your Family Now" : "Get Started"}
             </button>
             {plan.discount && (
-              <p className={`text-sm mt-4 ${index === 0 ? 'text-purple-600' : 'text-green-600'}`}>
+              <p className={`text-sm mt-4 ${index === 0 ? 'text-blue-700' : 'text-gray-600'}`}>
                 Limited Time: Get {plan.discount}% off - Save ${Number(plan.originalPrice) - Number(plan.price)} Today!
               </p>
             )}
             {index === 0 && (
-              <div className="mt-6 p-4 bg-purple-100 rounded-lg">
-                <p className="text-sm text-purple-700 font-medium">
-                  ✓ Most popular choice among families
+              <div className="mt-6 p-4 bg-gradient-to-br from-blue-50 to-blue-100 rounded-lg border border-blue-200">
+                <p className="text-sm text-blue-800 font-medium">
+                  ✓ Enterprise-grade security features
                   <br />
-                  ✓ Best value for your money
+                  ✓ Maximum cost savings
                   <br />
-                  ✓ Includes all premium features
+                  ✓ Priority customer support
                 </p>
               </div>
             )}
