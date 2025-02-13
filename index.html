@@ -6,6 +6,165 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>McAfee Family Protection</title>
     <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: Arial, sans-serif;
+        }
+
+        /* Hero Section */
+        .hero {
+            position: relative;
+            text-align: center;
+            padding: 6rem 1rem;
+            color: white;
+            background: linear-gradient(rgba(220,38,38,0.9), rgba(220,38,38,0.9));
+            overflow: hidden;
+        }
+
+        .hero-bg {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            opacity: 0.5;
+            z-index: -1;
+        }
+
+        .hero-content {
+            max-width: 800px;
+            margin: 0 auto;
+            position: relative;
+            z-index: 1;
+        }
+
+        .hero h1 {
+            font-size: 3rem;
+            margin-bottom: 1rem;
+        }
+
+        .hero p {
+            font-size: 1.25rem;
+            margin-bottom: 2rem;
+        }
+
+        /* Features Section */
+        .features {
+            padding: 6rem 1rem;
+            background: white;
+        }
+
+        .features h2 {
+            text-align: center;
+            font-size: 2.5rem;
+            margin-bottom: 3rem;
+            color: #333;
+        }
+
+        .features-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 1rem;
+        }
+
+        .feature-card {
+            background: white;
+            padding: 2rem;
+            border-radius: 8px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s;
+        }
+
+        .feature-card:hover {
+            transform: translateY(-5px);
+        }
+
+        /* Pricing Section */
+        .pricing {
+            padding: 6rem 1rem;
+            background: #f9fafb;
+        }
+
+        .pricing h2 {
+            text-align: center;
+            font-size: 2.5rem;
+            margin-bottom: 3rem;
+            color: #333;
+        }
+
+        .pricing-plans {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .plan {
+            background: white;
+            border-radius: 8px;
+            padding: 2rem;
+            margin-bottom: 2rem;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+
+        /* Testimonials Section */
+        .testimonials {
+            padding: 6rem 1rem;
+            background: white;
+        }
+
+        .testimonials h2 {
+            text-align: center;
+            font-size: 2.5rem;
+            margin-bottom: 3rem;
+            color: #333;
+        }
+
+        .testimonials-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .testimonial-card {
+            text-align: center;
+            padding: 2rem;
+            background: #f9fafb;
+            border-radius: 8px;
+        }
+
+        .testimonial-image {
+            width: 80px;
+            height: 80px;
+            border-radius: 50%;
+            margin: 0 auto 1rem;
+        }
+
+        /* Buttons */
+        .button {
+            display: inline-block;
+            padding: 1rem 2rem;
+            border-radius: 9999px;
+            background: #22c55e;
+            color: white;
+            text-decoration: none;
+            font-weight: bold;
+            transition: transform 0.2s, background-color 0.2s;
+            border: none;
+            cursor: pointer;
+        }
+
+        .button:hover {
+            background: #16a34a;
+            transform: scale(1.05);
+        }
+
         /* Modal/Popup Styles */
         .modal {
             display: none;
@@ -16,96 +175,50 @@
             height: 100%;
             background-color: rgba(0, 0, 0, 0.5);
             z-index: 1000;
-            opacity: 0;
-            transition: opacity 0.3s ease-in-out;
         }
 
         .modal.show {
             display: flex;
             justify-content: center;
             align-items: center;
-            opacity: 1;
         }
 
         .modal-content {
-            background-color: white;
+            background: white;
             padding: 2rem;
             border-radius: 8px;
-            max-width: 800px;
+            max-width: 600px;
             width: 90%;
             max-height: 80vh;
             overflow-y: auto;
             position: relative;
-            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-            transform: translateY(-20px);
-            transition: transform 0.3s ease-in-out;
-        }
-
-        .modal.show .modal-content {
-            transform: translateY(0);
         }
 
         .close-button {
             position: absolute;
-            right: 20px;
-            top: 20px;
+            right: 1rem;
+            top: 1rem;
             background: none;
             border: none;
-            font-size: 24px;
+            font-size: 1.5rem;
             cursor: pointer;
             color: #666;
-            transition: color 0.2s;
         }
 
-        .close-button:hover {
-            color: #000;
+        /* Header */
+        .header {
+            background: #dc2626;
+            color: white;
+            padding: 1.5rem;
+            text-align: center;
         }
 
-        .privacy-title {
-            font-size: 24px;
-            font-weight: bold;
-            color: #333;
-            margin-bottom: 1rem;
-        }
-
-        .privacy-content {
-            color: #444;
-            line-height: 1.6;
-        }
-
-        .privacy-content h3 {
-            color: #333;
-            margin-top: 1.5rem;
-            margin-bottom: 1rem;
-        }
-
-        .privacy-content ul {
-            padding-left: 20px;
-            margin-bottom: 1rem;
-        }
-
-        .privacy-content li {
-            margin-bottom: 0.5rem;
-        }
-
-        .privacy-link {
-            color: #dc2626;
-            text-decoration: none;
-            transition: color 0.2s;
-        }
-
-        .privacy-link:hover {
-            color: #991b1b;
-            text-decoration: underline;
-        }
-
-        /* Footer Styles */
+        /* Footer */
         .footer {
-            background-color: #dc2626;
+            background: #dc2626;
             color: white;
             text-align: center;
             padding: 1.5rem;
-            position: relative;
         }
 
         .footer-button {
@@ -114,36 +227,83 @@
             color: white;
             text-decoration: underline;
             cursor: pointer;
+        }
+
+        /* Welcome Modal */
+        #welcomeModal {
+            background-color: rgba(0, 0, 0, 0.8);
+        }
+
+        .welcome-content {
+            background: white;
+            padding: 2rem;
+            border-radius: 8px;
+            text-align: center;
+            max-width: 500px;
+            width: 90%;
+        }
+
+        .discount-tag {
+            background: #dc2626;
+            color: white;
             padding: 0.5rem 1rem;
-            transition: opacity 0.2s;
+            border-radius: 9999px;
+            display: inline-block;
+            margin-bottom: 1rem;
         }
 
-        .footer-button:hover {
-            opacity: 0.8;
-        }
-
-        /* Scrollbar Styles */
-        .modal-content::-webkit-scrollbar {
-            width: 8px;
-        }
-
-        .modal-content::-webkit-scrollbar-track {
-            background: #f1f1f1;
-            border-radius: 4px;
-        }
-
-        .modal-content::-webkit-scrollbar-thumb {
-            background: #888;
-            border-radius: 4px;
-        }
-
-        .modal-content::-webkit-scrollbar-thumb:hover {
-            background: #555;
+        @media (max-width: 768px) {
+            .hero h1 {
+                font-size: 2rem;
+            }
+            
+            .features-grid, .testimonials-grid {
+                grid-template-columns: 1fr;
+            }
         }
     </style>
 </head>
 <body>
-    <!-- Footer with Privacy Link -->
+    <!-- Header -->
+    <header class="header">
+        <h1>Protect Your Family with McAfee</h1>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <img src="https://storage.googleapis.com/a1aa/image/UXVuaGo-lzbFqZ5Pw59k9tybwwNSwqWYsdJHOj-rae0.jpg" alt="Family Protection" class="hero-bg">
+        <div class="hero-content">
+            <h1>Comprehensive Security for Unlimited Devices</h1>
+            <p>Protect what matters most! Get complete security for your family with our premium one-year subscription—now for just $69.99.</p>
+            <button class="button" onclick="scrollToPricing()">Get Started</button>
+        </div>
+    </section>
+
+    <!-- Features Section -->
+    <section class="features">
+        <h2>Why Choose McAfee Family Plan?</h2>
+        <div class="features-grid" id="features">
+            <!-- Features will be populated by JavaScript -->
+        </div>
+    </section>
+
+    <!-- Pricing Section -->
+    <section class="pricing" id="pricing">
+        <h2>Exclusive Offer</h2>
+        <div class="pricing-plans" id="plans">
+            <!-- Plans will be populated by JavaScript -->
+        </div>
+    </section>
+
+    <!-- Testimonials Section -->
+    <section class="testimonials">
+        <h2>What Our Customers Say</h2>
+        <div class="testimonials-grid" id="testimonials">
+            <!-- Testimonials will be populated by JavaScript -->
+        </div>
+    </section>
+
+    <!-- Footer -->
     <footer class="footer">
         <p>
             © 2024 McAfee. All rights reserved. |
@@ -154,67 +314,179 @@
     <!-- Privacy Modal -->
     <div id="privacyModal" class="modal">
         <div class="modal-content">
-            <button class="close-button" onclick="closePrivacyModal()">&times;</button>
-            <h2 class="privacy-title">Privacy Policy</h2>
+            <button class="close-button" onclick="closeModal('privacyModal')">&times;</button>
+            <h2>Privacy Policy</h2>
             <div class="privacy-content">
-                <p>
-                    Welcome to McAfee's Privacy Policy. Your privacy is important to us, and we are committed to protecting your personal information.
-                </p>
-                
-                <h3>1. Information We Collect</h3>
-                <ul>
-                    <li>Personal identification information (Name, email address, phone number)</li>
-                    <li>Device information and usage data</li>
-                    <li>Payment information for subscriptions</li>
-                </ul>
-
-                <h3>2. How We Use Your Information</h3>
-                <ul>
-                    <li>To provide and maintain our security services</li>
-                    <li>To notify you about changes to our services</li>
-                    <li>To provide customer support</li>
-                    <li>To gather analysis or valuable information to improve our services</li>
-                </ul>
-
-                <h3>3. Data Protection</h3>
-                <p>
-                    We implement robust security measures to maintain the safety of your personal information when you enter, submit, or access it. All information is encrypted using industry-standard SSL technology.
-                </p>
-
-                <h3>4. Contact Us</h3>
-                <p>
-                    If you have any questions about this Privacy Policy, please contact us at:
-                    <a href="mailto:privacy@mcafee.com" class="privacy-link">privacy@mcafee.com</a>
-                </p>
+                <!-- Privacy content will be populated by JavaScript -->
             </div>
         </div>
     </div>
 
+    <!-- Welcome Modal -->
+    <div id="welcomeModal" class="modal">
+        <div class="welcome-content">
+            <button class="close-button" onclick="closeModal('welcomeModal')">&times;</button>
+            <span class="discount-tag">Special Offer!</span>
+            <h2>Save 30% Today!</h2>
+            <p>Subscribe to our annual plan now and get premium protection at an incredible discount!</p>
+            <div style="margin: 1rem 0;">
+                <span style="text-decoration: line-through; color: #666;">$69.99</span>
+                <span style="font-size: 1.5rem; font-weight: bold; color: #dc2626; margin-left: 0.5rem">$48.99</span>
+            </div>
+            <button class="button" onclick="claimDiscount()">Claim Discount Now</button>
+        </div>
+    </div>
+
     <script>
-        // Privacy Modal Functions
-        const modal = document.getElementById('privacyModal');
+        // Data
+        const features = [
+            {
+                title: "Advanced Protection",
+                description: "Keep your devices safe from viruses, malware, and online threats."
+            },
+            {
+                title: "Privacy First",
+                description: "Enjoy secure browsing and protection for your personal data."
+            },
+            {
+                title: "Multi-Device Support",
+                description: "Protect unlimited devices with one convenient subscription."
+            },
+            {
+                title: "Optimized Performance",
+                description: "Keep your devices running at peak performance with lightweight security."
+            },
+            {
+                title: "24/7 Customer Support",
+                description: "Get assistance whenever you need it with our dedicated support team."
+            },
+            {
+                title: "Identity Theft Protection",
+                description: "Safeguard your personal information against identity theft."
+            }
+        ];
+
+        const plans = [
+            {
+                type: "yearly",
+                description: "Trusted by families worldwide. Our one-year subscription provides cutting-edge protection for unlimited devices at only",
+                price: "69.99",
+                discountedPrice: "48.99"
+            },
+            {
+                type: "lifetime",
+                description: "Or choose our one-time payment option for lifetime protection at only",
+                price: "119.99"
+            }
+        ];
+
+        const testimonials = [
+            {
+                name: "Sarah L.",
+                quote: "McAfee has been a lifesaver! I feel secure knowing all our family devices are protected.",
+                image: "https://storage.googleapis.com/a1aa/image/qEVZhxzZ9Ik1kAlHcOQiQpSvSxvhWf_zwjK4Ce2PWN4.jpg"
+            },
+            {
+                name: "John D.",
+                quote: "The setup was seamless, and now all our devices are secure. Highly recommended!",
+                image: "https://storage.googleapis.com/a1aa/image/NDLKyBMUaptvrBieksu2fZCETEUWwEbLuF8mVSONlyY.jpg"
+            },
+            {
+                name: "Emily K.",
+                quote: "Exceptional security and peace of mind for the entire family. A must-have subscription!",
+                image: "https://storage.googleapis.com/a1aa/image/Y-09LNkV_EDixOUG-iLukcduy3OAUzFrfz2LPH7UUHo.jpg"
+            },
+            {
+                name: "Michael T.",
+                quote: "Great value for the features offered. McAfee has exceeded my expectations.",
+                image: "https://storage.googleapis.com/a1aa/image/kwDjgktleWPB6n0BKHqcgj0MFTQ46cviOkdvg2uNRoI.jpg"
+            }
+        ];
+
+        // Populate Features
+        document.getElementById('features').innerHTML = features.map(feature => `
+            <div class="feature-card">
+                <h3>${feature.title}</h3>
+                <p>${feature.description}</p>
+            </div>
+        `).join('');
+
+        // Populate Plans
+        document.getElementById('plans').innerHTML = plans.map(plan => `
+            <div class="plan">
+                <p>${plan.description}</p>
+                ${plan.type === 'yearly' ? `
+                    <div>
+                        <span style="text-decoration: line-through">$${plan.price}</span>
+                        <span style="color: #dc2626; font-weight: bold; margin-left: 0.5rem">$${plan.discountedPrice}</span>
+                    </div>
+                ` : `
+                    <div>$${plan.price}</div>
+                `}
+                <button class="button" onclick="handleCheckout('${plan.type}')">Get Started</button>
+            </div>
+        `).join('');
+
+        // Populate Testimonials
+        document.getElementById('testimonials').innerHTML = testimonials.map(testimonial => `
+            <div class="testimonial-card">
+                <img src="${testimonial.image}" alt="${testimonial.name}" class="testimonial-image">
+                <p>${testimonial.quote}</p>
+                <p style="font-weight: bold; margin-top: 1rem">- ${testimonial.name}</p>
+            </div>
+        `).join('');
+
+        // Modal Functions
+        function openModal(modalId) {
+            document.getElementById(modalId).classList.add('show');
+            document.body.style.overflow = 'hidden';
+        }
+
+        function closeModal(modalId) {
+            document.getElementById(modalId).classList.remove('show');
+            document.body.style.overflow = '';
+        }
 
         function openPrivacyModal() {
-            modal.classList.add('show');
-            document.body.style.overflow = 'hidden'; // Prevent scrolling when modal is open
+            openModal('privacyModal');
         }
 
-        function closePrivacyModal() {
-            modal.classList.remove('show');
-            document.body.style.overflow = ''; // Restore scrolling
+        function scrollToPricing() {
+            closeModal('welcomeModal');
+            document.getElementById('pricing').scrollIntoView({ behavior: 'smooth' });
         }
 
-        // Close modal when clicking outside
-        modal.addEventListener('click', function(event) {
-            if (event.target === modal) {
-                closePrivacyModal();
+        function claimDiscount() {
+            scrollToPricing();
+        }
+
+        function handleCheckout(planType) {
+            alert('Thank you for your interest! This is a demo version. In a real application, this would redirect to a secure checkout page.');
+        }
+
+        // Show welcome modal on first visit
+        window.addEventListener('load', function() {
+            if (!localStorage.getItem('hasSeenWelcome')) {
+                setTimeout(() => {
+                    openModal('welcomeModal');
+                    localStorage.setItem('hasSeenWelcome', 'true');
+                }, 1500);
             }
         });
 
-        // Close modal with Escape key
+        // Close modals when clicking outside
+        window.addEventListener('click', function(event) {
+            if (event.target.classList.contains('modal')) {
+                closeModal(event.target.id);
+            }
+        });
+
+        // Close modals with Escape key
         document.addEventListener('keydown', function(event) {
-            if (event.key === 'Escape' && modal.classList.contains('show')) {
-                closePrivacyModal();
+            if (event.key === 'Escape') {
+                document.querySelectorAll('.modal.show').forEach(modal => {
+                    closeModal(modal.id);
+                });
             }
         });
     </script>
