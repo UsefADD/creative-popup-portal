@@ -1,17 +1,222 @@
+
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>creative-popup-portal</title>
-    <meta name="description" content="Lovable Generated Project" />
-    <meta name="author" content="Lovable" />
-    <meta property="og:image" content="/og-image.png" />
-  </head>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>McAfee Family Protection</title>
+    <style>
+        /* Modal/Popup Styles */
+        .modal {
+            display: none;
+            position: fixed;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.5);
+            z-index: 1000;
+            opacity: 0;
+            transition: opacity 0.3s ease-in-out;
+        }
 
-  <body>
-    <div id="root"></div>
-    <script src="https://cdn.gpteng.co/gptengineer.js" type="module"></script>
-    <script type="module" src="/src/main.tsx"></script>
-  </body>
+        .modal.show {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            opacity: 1;
+        }
+
+        .modal-content {
+            background-color: white;
+            padding: 2rem;
+            border-radius: 8px;
+            max-width: 800px;
+            width: 90%;
+            max-height: 80vh;
+            overflow-y: auto;
+            position: relative;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            transform: translateY(-20px);
+            transition: transform 0.3s ease-in-out;
+        }
+
+        .modal.show .modal-content {
+            transform: translateY(0);
+        }
+
+        .close-button {
+            position: absolute;
+            right: 20px;
+            top: 20px;
+            background: none;
+            border: none;
+            font-size: 24px;
+            cursor: pointer;
+            color: #666;
+            transition: color 0.2s;
+        }
+
+        .close-button:hover {
+            color: #000;
+        }
+
+        .privacy-title {
+            font-size: 24px;
+            font-weight: bold;
+            color: #333;
+            margin-bottom: 1rem;
+        }
+
+        .privacy-content {
+            color: #444;
+            line-height: 1.6;
+        }
+
+        .privacy-content h3 {
+            color: #333;
+            margin-top: 1.5rem;
+            margin-bottom: 1rem;
+        }
+
+        .privacy-content ul {
+            padding-left: 20px;
+            margin-bottom: 1rem;
+        }
+
+        .privacy-content li {
+            margin-bottom: 0.5rem;
+        }
+
+        .privacy-link {
+            color: #dc2626;
+            text-decoration: none;
+            transition: color 0.2s;
+        }
+
+        .privacy-link:hover {
+            color: #991b1b;
+            text-decoration: underline;
+        }
+
+        /* Footer Styles */
+        .footer {
+            background-color: #dc2626;
+            color: white;
+            text-align: center;
+            padding: 1.5rem;
+            position: relative;
+        }
+
+        .footer-button {
+            background: none;
+            border: none;
+            color: white;
+            text-decoration: underline;
+            cursor: pointer;
+            padding: 0.5rem 1rem;
+            transition: opacity 0.2s;
+        }
+
+        .footer-button:hover {
+            opacity: 0.8;
+        }
+
+        /* Scrollbar Styles */
+        .modal-content::-webkit-scrollbar {
+            width: 8px;
+        }
+
+        .modal-content::-webkit-scrollbar-track {
+            background: #f1f1f1;
+            border-radius: 4px;
+        }
+
+        .modal-content::-webkit-scrollbar-thumb {
+            background: #888;
+            border-radius: 4px;
+        }
+
+        .modal-content::-webkit-scrollbar-thumb:hover {
+            background: #555;
+        }
+    </style>
+</head>
+<body>
+    <!-- Footer with Privacy Link -->
+    <footer class="footer">
+        <p>
+            © 2024 McAfee. All rights reserved. |
+            <button class="footer-button" onclick="openPrivacyModal()">Privacy Policy</button>
+        </p>
+    </footer>
+
+    <!-- Privacy Modal -->
+    <div id="privacyModal" class="modal">
+        <div class="modal-content">
+            <button class="close-button" onclick="closePrivacyModal()">&times;</button>
+            <h2 class="privacy-title">Privacy Policy</h2>
+            <div class="privacy-content">
+                <p>
+                    Welcome to McAfee's Privacy Policy. Your privacy is important to us, and we are committed to protecting your personal information.
+                </p>
+                
+                <h3>1. Information We Collect</h3>
+                <ul>
+                    <li>Personal identification information (Name, email address, phone number)</li>
+                    <li>Device information and usage data</li>
+                    <li>Payment information for subscriptions</li>
+                </ul>
+
+                <h3>2. How We Use Your Information</h3>
+                <ul>
+                    <li>To provide and maintain our security services</li>
+                    <li>To notify you about changes to our services</li>
+                    <li>To provide customer support</li>
+                    <li>To gather analysis or valuable information to improve our services</li>
+                </ul>
+
+                <h3>3. Data Protection</h3>
+                <p>
+                    We implement robust security measures to maintain the safety of your personal information when you enter, submit, or access it. All information is encrypted using industry-standard SSL technology.
+                </p>
+
+                <h3>4. Contact Us</h3>
+                <p>
+                    If you have any questions about this Privacy Policy, please contact us at:
+                    <a href="mailto:privacy@mcafee.com" class="privacy-link">privacy@mcafee.com</a>
+                </p>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // Privacy Modal Functions
+        const modal = document.getElementById('privacyModal');
+
+        function openPrivacyModal() {
+            modal.classList.add('show');
+            document.body.style.overflow = 'hidden'; // Prevent scrolling when modal is open
+        }
+
+        function closePrivacyModal() {
+            modal.classList.remove('show');
+            document.body.style.overflow = ''; // Restore scrolling
+        }
+
+        // Close modal when clicking outside
+        modal.addEventListener('click', function(event) {
+            if (event.target === modal) {
+                closePrivacyModal();
+            }
+        });
+
+        // Close modal with Escape key
+        document.addEventListener('keydown', function(event) {
+            if (event.key === 'Escape' && modal.classList.contains('show')) {
+                closePrivacyModal();
+            }
+        });
+    </script>
+</body>
 </html>
