@@ -1,6 +1,6 @@
 
 import { Dialog, DialogContent, DialogHeader, DialogTitle } from "@/components/ui/dialog";
-import { Shield, X, CheckCircle, AlertCircle, Lock } from "lucide-react";
+import { Shield, X, CheckCircle, AlertCircle, Lock, Percent } from "lucide-react";
 
 interface WelcomeDialogProps {
   open: boolean;
@@ -16,7 +16,7 @@ export const WelcomeDialog = ({ open, onOpenChange, onScrollToPricing }: Welcome
           <div className="flex items-center justify-center gap-2 mb-2">
             <Shield className="w-8 h-8 text-red-600" />
             <DialogTitle className="text-2xl font-bold text-center">
-              Welcome to McAfee Family Protection!
+              Special Welcome Offer!
             </DialogTitle>
           </div>
           <button
@@ -28,28 +28,41 @@ export const WelcomeDialog = ({ open, onOpenChange, onScrollToPricing }: Welcome
         </DialogHeader>
         <div className="mt-4 text-center">
           <div className="bg-gradient-to-br from-red-50 to-red-100 p-6 rounded-lg mb-4 shadow-sm">
-            <AlertCircle className="w-12 h-12 text-red-600 mx-auto mb-4" />
-            <h3 className="text-3xl font-bold text-red-600 mb-4">Special First-Time Visitor Offer!</h3>
-            <p className="text-gray-700 mb-6">
-              Welcome! As a special offer for new visitors, we're offering our premium family protection package at an incredible discount.
-            </p>
-            <div className="space-y-4 text-left mb-6">
-              {[
-                "Complete protection for unlimited devices",
-                "Advanced virus & malware protection",
-                "24/7 premium customer support"
-              ].map((feature, index) => (
-                <div key={index} className="flex items-center text-gray-700">
-                  <CheckCircle className="w-5 h-5 text-green-500 mr-3" />
-                  <span>{feature}</span>
+            <div className="relative inline-block mb-4">
+              <div className="absolute -right-3 -top-3">
+                <div className="bg-red-600 text-white rounded-full p-2 animate-bounce">
+                  <Percent className="w-5 h-5" />
                 </div>
-              ))}
+              </div>
+              <AlertCircle className="w-12 h-12 text-red-600 mx-auto" />
             </div>
-            <div className="bg-white p-4 rounded-lg mb-6 shadow-sm">
-              <div className="text-2xl font-bold text-red-600">
-                <div className="mb-2">Annual Plan Special Offer:</div>
-                <span className="line-through text-gray-500">$99.99</span>
-                <span className="ml-2">$69.99/year</span>
+            <h3 className="text-3xl font-bold text-red-600 mb-4">
+              Save 30% on Annual Protection!
+            </h3>
+            <div className="bg-white p-4 rounded-lg mb-6">
+              <p className="text-gray-700 text-lg mb-4">
+                Subscribe now and get our complete security package at an incredible discount:
+              </p>
+              <div className="space-y-3 text-left mb-4">
+                <div className="flex items-center text-gray-700">
+                  <CheckCircle className="w-5 h-5 text-green-500 mr-3 flex-shrink-0" />
+                  <span>Premium protection for unlimited devices</span>
+                </div>
+                <div className="flex items-center text-gray-700">
+                  <CheckCircle className="w-5 h-5 text-green-500 mr-3 flex-shrink-0" />
+                  <span>Advanced virus & malware protection</span>
+                </div>
+                <div className="flex items-center text-gray-700">
+                  <CheckCircle className="w-5 h-5 text-green-500 mr-3 flex-shrink-0" />
+                  <span>24/7 premium customer support</span>
+                </div>
+              </div>
+              <div className="text-center">
+                <div className="text-2xl font-bold text-red-600">
+                  <span className="line-through text-gray-500">$99.99/year</span>
+                  <span className="ml-2">$69.99/year</span>
+                </div>
+                <p className="text-sm text-green-600 mt-1">Save $30 with this limited-time offer!</p>
               </div>
             </div>
             <button
@@ -57,12 +70,12 @@ export const WelcomeDialog = ({ open, onOpenChange, onScrollToPricing }: Welcome
               className="bg-red-600 hover:bg-red-700 text-white font-bold py-4 px-8 rounded-full transition-all transform hover:scale-105 duration-200 shadow-lg flex items-center justify-center mx-auto gap-2"
             >
               <CheckCircle className="w-5 h-5" />
-              Get Protected Now
+              Claim Your 30% Discount Now
             </button>
           </div>
           <p className="text-sm text-gray-500 flex items-center justify-center gap-1">
             <Lock className="w-4 h-4" />
-            <span>Limited time offer for new customers. Discount applies to first year only.</span>
+            <span>Limited time offer for new customers. 30% discount applies to first year only.</span>
           </p>
         </div>
       </DialogContent>
