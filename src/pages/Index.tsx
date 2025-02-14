@@ -1,3 +1,4 @@
+
 import { useState, useEffect } from "react";
 import { useToast } from "@/hooks/use-toast";
 import { WelcomeDialog } from "@/components/dialogs/WelcomeDialog";
@@ -159,8 +160,8 @@ const Index = () => {
 
       <Features features={features} />
       <DetailedFeatures />
-      <InteractiveFeatures />
       <Plans plans={plans} onCheckout={handleCheckout} />
+      <InteractiveFeatures />
       <Testimonials testimonials={testimonials} />
 
       <footer className="bg-red-600 text-white text-center py-6">
