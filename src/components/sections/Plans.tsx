@@ -14,98 +14,124 @@ interface PlansProps {
 }
 
 export const Plans = ({ plans, onCheckout }: PlansProps) => (
-  <section className="py-24 bg-gray-100" id="pricing">
-    <h3 className="text-4xl font-bold text-center mb-6">Choose Your Protection Plan</h3>
-    <p className="text-xl text-center text-gray-600 max-w-3xl mx-auto mb-12">
-      Get complete peace of mind with our comprehensive security suite. Both plans offer identical premium features and protect unlimited devices - choose annual billing for maximum savings, or monthly billing for flexible payments.
-    </p>
-    <div className="max-w-5xl mx-auto px-4">
-      {plans.map((plan) => (
-        <div 
-          key={plan.type} 
-          className={`mb-12 flex flex-col md:flex-row items-center justify-between gap-8 bg-white rounded-xl overflow-hidden shadow-lg hover:shadow-xl transition-shadow duration-300 relative
-            ${plan.type === "yearly" ? 'border-2 border-[#1652F0]' : ''}`}
-        >
-          {plan.type === "yearly" && (
-            <div className="absolute -top-4 left-1/2 transform -translate-x-1/2 bg-[#1652F0] text-white px-8 py-2 rounded-full font-semibold text-base shadow-md">
-              Best Value
-            </div>
-          )}
-          <div className="w-full md:w-1/2">
-            <img
-              src={plan.type === "yearly"
-                ? "https://media.mcafeeassets.com/content/dam/npcld/ecommerce/en-us/mcafee-redesign/radio-hero/family-662.png"
-                : "/lovable-uploads/afbd1709-000b-4a46-8375-15f18d5fc453.png"
-              }
-              alt="McAfee Premium Family Protection features"
-              className="w-full h-auto object-cover"
-            />
-          </div>
-          <div className={`w-full md:w-1/2 p-8 ${plan.type === "yearly" ? 'bg-blue-50' : ''}`}>
-            <h4 className="text-3xl font-bold mb-4 text-[#1652F0]">
-              {plan.type === "yearly" ? (
-                <div className="flex items-center gap-2">
-                  Annual Protection Plan
-                  <span className="bg-blue-100 text-[#1652F0] px-3 py-1 rounded-full text-sm">
-                    Save 53%
+  <section className="py-24 bg-gradient-to-b from-gray-100 to-white" id="pricing">
+    <div className="max-w-7xl mx-auto px-4">
+      <div className="text-center mb-16">
+        <h3 className="text-4xl font-bold mb-6 bg-clip-text text-transparent bg-gradient-to-r from-red-600 to-red-800">
+          Choose Your Protection Plan
+        </h3>
+        <p className="text-xl text-gray-600 max-w-3xl mx-auto">
+          Get complete peace of mind with our comprehensive security suite. Both plans offer identical premium features and protect unlimited devices.
+        </p>
+      </div>
+
+      <div className="grid md:grid-cols-2 gap-8 max-w-6xl mx-auto">
+        {plans.map((plan) => (
+          <div 
+            key={plan.type}
+            className={`relative overflow-hidden rounded-2xl transition-all duration-300 hover:transform hover:-translate-y-2
+              ${plan.type === "yearly" ? 'bg-gradient-to-br from-blue-50 via-white to-blue-50 border-2 border-[#1652F0] shadow-2xl' : 'bg-white border border-gray-200 shadow-xl'}`}
+          >
+            {plan.type === "yearly" && (
+              <div className="absolute -top-3 left-0 w-full flex justify-center">
+                <div className="bg-gradient-to-r from-[#1652F0] to-blue-600 text-white px-6 py-1.5 rounded-full font-semibold text-sm shadow-lg">
+                  Most Popular Choice
+                </div>
+              </div>
+            )}
+
+            <div className="p-8 pt-12">
+              <h4 className={`text-2xl font-bold mb-4 ${plan.type === "yearly" ? 'text-[#1652F0]' : 'text-gray-900'}`}>
+                {plan.type === "yearly" ? "Annual Protection Plan" : "Monthly Protection Plan"}
+              </h4>
+
+              <div className="mb-6">
+                <div className="flex items-baseline gap-2 mb-2">
+                  <span className={`text-5xl font-bold ${plan.type === "yearly" ? 'text-[#1652F0]' : 'text-gray-900'}`}>
+                    ${plan.price}
+                  </span>
+                  <span className="text-gray-600">
+                    {plan.type === "yearly" ? "/year" : "/month"}
                   </span>
                 </div>
-              ) : (
-                "Monthly Protection Plan"
-              )}
-            </h4>
-            <p className="text-gray-600 mb-6">{plan.description}</p>
-            <div className="mb-6">
-              {plan.originalPrice ? (
-                <div className="space-y-2">
-                  <div className="flex items-center gap-2">
-                    <span className={`text-3xl font-bold ${plan.type === "yearly" ? 'text-[#1652F0]' : 'text-gray-900'}`}>
-                      ${plan.price}
-                    </span>
-                    <span className="text-sm text-gray-500">{plan.type === "yearly" ? "per year" : "per month"}</span>
-                  </div>
-                  <div className="flex items-center gap-2">
-                    <span className="line-through text-gray-500">${plan.originalPrice}</span>
-                    <span className={`${plan.type === "yearly" ? 'bg-blue-100 text-[#1652F0]' : 'bg-gray-100 text-gray-800'} px-2 py-1 rounded-full text-sm font-semibold`}>
+                {plan.originalPrice && (
+                  <div className="flex items-center gap-3 mt-2">
+                    <span className="line-through text-gray-500 text-lg">${plan.originalPrice}</span>
+                    <span className={`${plan.type === "yearly" ? 'bg-blue-100 text-[#1652F0]' : 'bg-gray-100 text-gray-800'} px-3 py-1 rounded-full text-sm font-semibold`}>
                       Save {plan.discount}%
                     </span>
                   </div>
+                )}
+              </div>
+
+              <p className="text-gray-600 mb-8 min-h-[80px]">{plan.description}</p>
+
+              <div className="space-y-4 mb-8">
+                <div className="flex items-center gap-3">
+                  <span className="flex-shrink-0 w-5 h-5 rounded-full bg-green-100 text-green-600 flex items-center justify-center text-sm">✓</span>
+                  <span className="text-gray-700">Unlimited Device Protection</span>
                 </div>
-              ) : (
-                <div className="flex items-center gap-2">
-                  <span className="text-3xl font-bold text-gray-900">${plan.price}</span>
-                  <span className="text-sm text-gray-500">{plan.type === "yearly" ? "per year" : "per month"}</span>
+                <div className="flex items-center gap-3">
+                  <span className="flex-shrink-0 w-5 h-5 rounded-full bg-green-100 text-green-600 flex items-center justify-center text-sm">✓</span>
+                  <span className="text-gray-700">Advanced Antivirus Security</span>
+                </div>
+                <div className="flex items-center gap-3">
+                  <span className="flex-shrink-0 w-5 h-5 rounded-full bg-green-100 text-green-600 flex items-center justify-center text-sm">✓</span>
+                  <span className="text-gray-700">Identity Theft Protection</span>
+                </div>
+                {plan.type === "yearly" && (
+                  <>
+                    <div className="flex items-center gap-3">
+                      <span className="flex-shrink-0 w-5 h-5 rounded-full bg-green-100 text-green-600 flex items-center justify-center text-sm">✓</span>
+                      <span className="text-gray-700">Priority Customer Support</span>
+                    </div>
+                    <div className="flex items-center gap-3">
+                      <span className="flex-shrink-0 w-5 h-5 rounded-full bg-green-100 text-green-600 flex items-center justify-center text-sm">✓</span>
+                      <span className="text-gray-700">$2M Identity Theft Coverage</span>
+                    </div>
+                  </>
+                )}
+              </div>
+
+              <button
+                onClick={() => onCheckout(plan.type)}
+                className={`w-full font-bold py-4 px-6 rounded-xl transition-all duration-300 transform hover:scale-105
+                  ${plan.type === "yearly"
+                    ? 'bg-gradient-to-r from-[#1652F0] to-blue-600 hover:from-blue-600 hover:to-[#1652F0] text-white shadow-lg hover:shadow-xl' 
+                    : 'bg-gray-900 hover:bg-gray-800 text-white shadow-md hover:shadow-lg'}`}
+              >
+                {plan.type === "yearly" ? "Get Protected Now" : "Start Monthly Plan"}
+              </button>
+
+              {plan.discount && (
+                <p className={`text-sm mt-4 text-center ${plan.type === "yearly" ? 'text-[#1652F0]' : 'text-gray-600'}`}>
+                  Limited Time Offer - Save ${Number(plan.originalPrice) - Number(plan.price)} Today!
+                </p>
+              )}
+
+              {plan.type === "yearly" && (
+                <div className="mt-6 p-4 bg-blue-50 rounded-xl border border-blue-100">
+                  <div className="flex items-center gap-2 mb-2">
+                    <span className="text-[#1652F0]">🔒</span>
+                    <span className="text-sm font-semibold text-[#1652F0]">Annual Plan Benefits</span>
+                  </div>
+                  <ul className="text-sm text-gray-600 space-y-2">
+                    <li>• Maximum cost savings (53% off)</li>
+                    <li>• Enterprise-grade security features</li>
+                    <li>• Premium customer support access</li>
+                  </ul>
                 </div>
               )}
             </div>
-            <button
-              onClick={() => onCheckout(plan.type)}
-              className={`w-full font-bold py-3 px-6 rounded-lg transition-all transform hover:scale-105 duration-200 
-                ${plan.type === "yearly"
-                  ? 'bg-[#1652F0] hover:bg-blue-700 text-white shadow-lg' 
-                  : 'bg-gray-800 hover:bg-gray-900 text-white'}`}
-            >
-              {plan.type === "yearly" ? "Secure Your Family Now" : "Get Started"}
-            </button>
-            {plan.discount && (
-              <p className={`text-sm mt-4 ${plan.type === "yearly" ? 'text-[#1652F0]' : 'text-gray-600'}`}>
-                Limited Time: Get {plan.discount}% off - Save ${Number(plan.originalPrice) - Number(plan.price)} Today!
-              </p>
-            )}
-            {plan.type === "yearly" && (
-              <div className="mt-6 p-4 bg-blue-50 rounded-lg border border-blue-200">
-                <p className="text-sm text-[#1652F0] font-medium">
-                  ✓ Enterprise-grade security features
-                  <br />
-                  ✓ Maximum cost savings
-                  <br />
-                  ✓ Priority customer support
-                </p>
-              </div>
-            )}
           </div>
-        </div>
-      ))}
+        ))}
+      </div>
+
+      <div className="mt-12 text-center">
+        <p className="text-gray-500 text-sm">
+          Secure payment powered by industry leaders • 30-day money-back guarantee • 24/7 support
+        </p>
+      </div>
     </div>
   </section>
 );
