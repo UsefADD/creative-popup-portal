@@ -1,4 +1,3 @@
-
 import { useState, useEffect } from "react";
 import { useToast } from "@/hooks/use-toast";
 import { WelcomeDialog } from "@/components/dialogs/WelcomeDialog";
@@ -8,6 +7,7 @@ import { Features } from "@/components/sections/Features";
 import { DetailedFeatures } from "@/components/sections/DetailedFeatures";
 import { Plans } from "@/components/sections/Plans";
 import { Testimonials } from "@/components/sections/Testimonials";
+import { InteractiveFeatures } from "@/components/sections/InteractiveFeatures";
 
 const features = [
   {
@@ -159,6 +159,7 @@ const Index = () => {
 
       <Features features={features} />
       <DetailedFeatures />
+      <InteractiveFeatures />
       <Plans plans={plans} onCheckout={handleCheckout} />
       <Testimonials testimonials={testimonials} />
 
