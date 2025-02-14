@@ -1,4 +1,3 @@
-
 import { useState, useEffect } from "react";
 import { useToast } from "@/hooks/use-toast";
 import { WelcomeDialog } from "@/components/dialogs/WelcomeDialog";
@@ -9,6 +8,7 @@ import { DetailedFeatures } from "@/components/sections/DetailedFeatures";
 import { Plans } from "@/components/sections/Plans";
 import { Testimonials } from "@/components/sections/Testimonials";
 import { InteractiveFeatures } from "@/components/sections/InteractiveFeatures";
+import { FAQ } from "@/components/sections/FAQ";
 
 const features = [
   {
@@ -163,6 +163,7 @@ const Index = () => {
       <Plans plans={plans} onCheckout={handleCheckout} />
       <InteractiveFeatures />
       <Testimonials testimonials={testimonials} />
+      <FAQ />
 
       <footer className="bg-red-600 text-white text-center py-6">
         <p>
