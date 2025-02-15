@@ -1,4 +1,3 @@
-
 interface Plan {
   type: "yearly" | "lifetime";
   description: string;
@@ -39,9 +38,9 @@ export const Plans = ({ plans, onCheckout }: PlansProps) => (
             className={`relative overflow-hidden rounded-2xl transition-all duration-300 hover:transform hover:-translate-y-2
               ${plan.type === "yearly" 
                 ? 'bg-gradient-to-br from-white via-white to-blue-50 border-2 border-[#1652F0] shadow-2xl' 
-                : 'bg-white border border-gray-200 shadow-xl'}`}
+                : 'bg-gradient-to-br from-white via-white to-emerald-50 border-2 border-emerald-600 shadow-xl'}`}
           >
-            {plan.type === "yearly" && (
+            {plan.type === "yearly" ? (
               <>
                 <div className="absolute -top-3 left-0 w-full flex justify-center z-10">
                   <div className="bg-gradient-to-r from-[#1652F0] to-blue-600 text-white px-6 py-1.5 rounded-full font-semibold text-sm shadow-lg animate-pulse">
@@ -56,33 +55,50 @@ export const Plans = ({ plans, onCheckout }: PlansProps) => (
                   />
                 </div>
               </>
+            ) : (
+              <div className="absolute -top-3 left-0 w-full flex justify-center z-10">
+                <div className="bg-gradient-to-r from-emerald-600 to-emerald-500 text-white px-6 py-1.5 rounded-full font-semibold text-sm shadow-lg">
+                  Limited Time Offer
+                </div>
+              </div>
             )}
 
             <div className="p-8 pt-12 relative z-0">
-              <h4 className={`text-2xl font-bold mb-4 ${plan.type === "yearly" ? 'text-[#1652F0]' : 'text-gray-900'}`}>
-                {plan.type === "yearly" ? "Annual Protection Plan" : "Monthly Protection Plan"}
+              <h4 className={`text-2xl font-bold mb-4 ${plan.type === "yearly" ? 'text-[#1652F0]' : 'text-emerald-600'}`}>
+                {plan.type === "yearly" ? "Annual Protection Plan" : "Lifetime Price-Lock Plan"}
               </h4>
 
               <div className="mb-6">
                 <div className="flex items-baseline gap-2 mb-2">
-                  <span className={`text-6xl font-bold ${plan.type === "yearly" ? 'text-[#1652F0]' : 'text-gray-900'}`}>
-                    ${plan.price}
+                  <span className={`text-6xl font-bold ${plan.type === "yearly" ? 'text-[#1652F0]' : 'text-emerald-600'}`}>
+                    ${plan.type === "yearly" ? plan.price : "14.99"}
                   </span>
                   <span className="text-gray-600">
                     {plan.type === "yearly" ? "/year" : "/month"}
                   </span>
                 </div>
-                {plan.originalPrice && (
+                {plan.type === "yearly" ? (
                   <div className="flex items-center gap-3 mt-2">
                     <span className="line-through text-gray-500 text-lg">${plan.originalPrice}</span>
-                    <span className={`${plan.type === "yearly" ? 'bg-blue-100 text-[#1652F0]' : 'bg-gray-100 text-gray-800'} px-3 py-1 rounded-full text-sm font-semibold animate-pulse`}>
+                    <span className="bg-blue-100 text-[#1652F0] px-3 py-1 rounded-full text-sm font-semibold animate-pulse">
                       Save {plan.discount}%
+                    </span>
+                  </div>
+                ) : (
+                  <div className="flex items-center gap-3 mt-2">
+                    <span className="line-through text-gray-500 text-lg">$39.99</span>
+                    <span className="bg-emerald-100 text-emerald-600 px-3 py-1 rounded-full text-sm font-semibold animate-pulse">
+                      Save 62%
                     </span>
                   </div>
                 )}
               </div>
 
-              <p className="text-gray-600 mb-8 min-h-[80px]">{plan.description}</p>
+              <p className="text-gray-600 mb-8 min-h-[80px]">
+                {plan.type === "yearly" 
+                  ? plan.description 
+                  : "Lock in our lowest monthly rate forever! Subscribe now to secure this special price that will never increase for the lifetime of your subscription."}
+              </p>
 
               <div className="space-y-4 mb-8">
                 <div className="flex items-center gap-3">
@@ -116,18 +132,22 @@ export const Plans = ({ plans, onCheckout }: PlansProps) => (
                 className={`w-full font-bold py-4 px-6 rounded-xl transition-all duration-300 transform hover:scale-105
                   ${plan.type === "yearly"
                     ? 'bg-gradient-to-r from-[#1652F0] to-blue-600 hover:from-blue-600 hover:to-[#1652F0] text-white shadow-lg hover:shadow-xl' 
-                    : 'bg-gray-900 hover:bg-gray-800 text-white shadow-md hover:shadow-lg'}`}
+                    : 'bg-gradient-to-r from-emerald-600 to-emerald-500 hover:from-emerald-500 hover:to-emerald-600 text-white shadow-lg hover:shadow-xl'}`}
               >
-                {plan.type === "yearly" ? "Get Protected Now" : "Start Monthly Plan"}
+                {plan.type === "yearly" ? "Get Protected Now" : "Lock In This Price Now"}
               </button>
 
-              {plan.discount && (
-                <p className={`text-sm mt-4 text-center ${plan.type === "yearly" ? 'text-[#1652F0]' : 'text-gray-600'}`}>
+              {plan.type === "yearly" ? (
+                <p className="text-sm mt-4 text-center text-[#1652F0]">
                   Limited Time Offer - Save ${Number(plan.originalPrice) - Number(plan.price)} Today!
+                </p>
+              ) : (
+                <p className="text-sm mt-4 text-center text-emerald-600">
+                  Never pay more than $14.99/month - Price locked for life!
                 </p>
               )}
 
-              {plan.type === "yearly" && (
+              {plan.type === "yearly" ? (
                 <div className="mt-6 p-4 bg-gradient-to-br from-blue-50 to-white rounded-xl border border-blue-100">
                   <div className="flex items-center gap-2 mb-2">
                     <span className="text-[#1652F0]">🔒</span>
@@ -145,6 +165,27 @@ export const Plans = ({ plans, onCheckout }: PlansProps) => (
                     <li className="flex items-center gap-2">
                       <span className="text-[#1652F0]">•</span>
                       <span>Premium customer support access</span>
+                    </li>
+                  </ul>
+                </div>
+              ) : (
+                <div className="mt-6 p-4 bg-gradient-to-br from-emerald-50 to-white rounded-xl border border-emerald-100">
+                  <div className="flex items-center gap-2 mb-2">
+                    <span className="text-emerald-600">🔒</span>
+                    <span className="text-sm font-semibold text-emerald-600">Lifetime Price-Lock Benefits</span>
+                  </div>
+                  <ul className="text-sm text-gray-600 space-y-2">
+                    <li className="flex items-center gap-2">
+                      <span className="text-emerald-600">•</span>
+                      <span>Price locked at $14.99/month forever</span>
+                    </li>
+                    <li className="flex items-center gap-2">
+                      <span className="text-emerald-600">•</span>
+                      <span>Save $300/year compared to regular price</span>
+                    </li>
+                    <li className="flex items-center gap-2">
+                      <span className="text-emerald-600">•</span>
+                      <span>Cancel anytime, no commitment</span>
                     </li>
                   </ul>
                 </div>
