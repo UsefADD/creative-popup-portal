@@ -7,6 +7,15 @@ import LanguageDetector from 'i18next-browser-languagedetector';
 import translationEN from './locales/en.json';
 import translationES from './locales/es.json';
 import translationFR from './locales/fr.json';
+import translationDE from './locales/de.json';
+
+export const currencyMap: Record<string, { symbol: string; rate: number }> = {
+  'en': { symbol: '$', rate: 1 }, // USD (base currency)
+  'es': { symbol: '€', rate: 0.91 }, // EUR
+  'fr': { symbol: '€', rate: 0.91 }, // EUR
+  'de': { symbol: '€', rate: 0.91 }, // EUR
+  'default': { symbol: '$', rate: 1 }
+};
 
 const resources = {
   en: {
@@ -17,6 +26,9 @@ const resources = {
   },
   fr: {
     translation: translationFR
+  },
+  de: {
+    translation: translationDE
   }
 };
 

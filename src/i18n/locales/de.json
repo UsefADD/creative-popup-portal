@@ -1,0 +1,34 @@
+
+{
+  "header": {
+    "title": "McAfee Premium Familienschutz",
+    "subtitle": "Komplettlösung für Familiensicherheit"
+  },
+  "hero": {
+    "description": "Schützen Sie Ihre gesamte Familie mit unserer umfassenden Sicherheitssuite. Wählen Sie zwischen unserem Advanced-Plan für 99,99€/Jahr, Basic-Plan für 79,99€/Jahr oder monatlichen Optionen ab 12,99€. Zeitlich begrenztes Angebot - Sparen Sie bis zu 75% bei unseren Jahresplänen!",
+    "cta": "Unsere Pläne ansehen"
+  },
+  "plans": {
+    "advanced": {
+      "name": "Jährlicher Advanced-Schutzplan",
+      "description": "Sichern Sie sich unseren besten Wert mit dem jährlichen Advanced-Plan! Schützen Sie unbegrenzt viele Geräte mit unserer Premium-Sicherheitssuite inklusive VPN und Identitätsschutz."
+    },
+    "lifetime": {
+      "name": "Lebenslanger Preisgarantie-Plan",
+      "description": "Sichern Sie sich unseren niedrigsten Monatstarif für immer! Abonnieren Sie jetzt, um sich diesen Sonderpreis zu sichern, der während der gesamten Laufzeit Ihres Abonnements nie steigen wird."
+    },
+    "basic": {
+      "name": "Jährlicher Basic-Schutzplan",
+      "description": "Perfekt für kleine Haushalte! Schützen Sie bis zu 5 Geräte mit erweiterten Sicherheitsfunktionen einschließlich VPN und Identitätsschutz zu einem erschwinglichen Preis."
+    }
+  },
+  "features": {
+    "title": "Warum McAfee Familienschutz wählen?",
+    "protection": "Erweiterter Schutz",
+    "privacy": "Datenschutz zuerst",
+    "multiDevice": "Multi-Geräte-Unterstützung",
+    "performance": "Optimierte Leistung",
+    "support": "24/7 Kundensupport",
+    "identity": "Identitätsdiebstahlschutz"
+  }
+}
