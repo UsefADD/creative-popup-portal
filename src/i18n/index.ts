@@ -42,13 +42,8 @@ i18n
       escapeValue: false
     },
     detection: {
-      order: ['querystring', 'navigator', 'htmlTag', 'path', 'subdomain'],
+      order: ['querystring'],
       lookupQuerystring: 'lng',
-      lookupCookie: 'i18next',
-      lookupLocalStorage: 'i18nextLng',
-      caches: ['localStorage', 'cookie'],
-      cookieMinutes: 10,
-      cookieDomain: 'myDomain'
     },
     load: 'languageOnly',
     debug: true // This will help us see what's happening with language detection
@@ -56,9 +51,12 @@ i18n
 
 // Force language detection on init
 const detectLanguage = () => {
-  const browserLang = navigator.language.split('-')[0];
-  if (['en', 'es', 'fr', 'de'].includes(browserLang)) {
-    i18n.changeLanguage(browserLang);
+  const urlParams = new URLSearchParams(window.location.search);
+  const langParam = urlParams.get('lng');
+  
+  if (langParam && ['en', 'es', 'fr', 'de'].includes(langParam)) {
+    i18n.changeLanguage(langParam);
+    console.log('Language changed to:', langParam);
   }
 };
 
