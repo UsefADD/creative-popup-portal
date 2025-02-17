@@ -1,3 +1,4 @@
+
 interface Plan {
   type: "yearly" | "lifetime" | "basic";
   description: string;
@@ -6,8 +7,6 @@ interface Plan {
   discount?: string;
   checkoutUrl: string;
   deviceLimit?: number;
-  monthlyPrice?: string;
-  monthlyOriginalPrice?: string;
 }
 
 interface PlansProps {
@@ -74,10 +73,10 @@ export const Plans = ({ plans, onCheckout }: PlansProps) => (
                     : 'text-purple-600'
               }`}>
                 {plan.type === "yearly" 
-                  ? "Annual Advanced Protection Plan" 
+                  ? "Annual Protection Plan" 
                   : plan.type === "lifetime"
                     ? "Lifetime Price-Lock Plan"
-                    : "Annual Basic Protection Plan"}
+                    : "Basic Protection Plan"}
               </h4>
 
               <div className="mb-6">
@@ -89,18 +88,14 @@ export const Plans = ({ plans, onCheckout }: PlansProps) => (
                         ? 'text-emerald-600'
                         : 'text-purple-600'
                   }`}>
-                    ${plan.type === "basic" && plan.monthlyPrice ? plan.monthlyPrice : plan.price}
+                    ${plan.price}
                   </span>
                   <span className="text-gray-600">
-                    {plan.type === "lifetime" ? "/month" : plan.type === "basic" ? "or $89.99/year" : "/year"}
+                    {plan.type === "lifetime" ? "/month" : "/year"}
                   </span>
                 </div>
                 <div className="flex items-center gap-3 mt-2">
-                  <span className="line-through text-gray-500 text-lg">
-                    ${plan.type === "basic" && plan.monthlyPrice 
-                      ? plan.monthlyOriginalPrice 
-                      : plan.originalPrice}
-                  </span>
+                  <span className="line-through text-gray-500 text-lg">${plan.originalPrice}</span>
                   <span className={`px-3 py-1 rounded-full text-sm font-semibold animate-pulse ${
                     plan.type === "yearly"
                       ? 'bg-blue-100 text-[#1652F0]'
@@ -126,19 +121,17 @@ export const Plans = ({ plans, onCheckout }: PlansProps) => (
                   <span className="flex-shrink-0 w-6 h-6 rounded-full bg-green-100 text-green-600 flex items-center justify-center">✓</span>
                   <span className="text-gray-700">Advanced Antivirus Security</span>
                 </div>
-                <div className="flex items-center gap-3">
-                  <span className="flex-shrink-0 w-6 h-6 rounded-full bg-green-100 text-green-600 flex items-center justify-center">✓</span>
-                  <span className="text-gray-700">Identity Theft Protection</span>
-                </div>
-                <div className="flex items-center gap-3">
-                  <span className="flex-shrink-0 w-6 h-6 rounded-full bg-green-100 text-green-600 flex items-center justify-center">✓</span>
-                  <span className="text-gray-700">VPN Service Included</span>
-                </div>
-                {plan.type === "yearly" && (
-                  <div className="flex items-center gap-3">
-                    <span className="flex-shrink-0 w-6 h-6 rounded-full bg-green-100 text-green-600 flex items-center justify-center">✓</span>
-                    <span className="text-gray-700">Premium Customer Support</span>
-                  </div>
+                {plan.type !== "basic" && (
+                  <>
+                    <div className="flex items-center gap-3">
+                      <span className="flex-shrink-0 w-6 h-6 rounded-full bg-green-100 text-green-600 flex items-center justify-center">✓</span>
+                      <span className="text-gray-700">Identity Theft Protection</span>
+                    </div>
+                    <div className="flex items-center gap-3">
+                      <span className="flex-shrink-0 w-6 h-6 rounded-full bg-green-100 text-green-600 flex items-center justify-center">✓</span>
+                      <span className="text-gray-700">VPN Service Included</span>
+                    </div>
+                  </>
                 )}
               </div>
 
@@ -164,9 +157,7 @@ export const Plans = ({ plans, onCheckout }: PlansProps) => (
               }`}>
                 {plan.type === "lifetime"
                   ? "Never pay more than $14.99/month - Price locked for life!"
-                  : plan.type === "basic"
-                    ? "Start with just $9.99/month or save more annually!"
-                    : `Save $${(Number(plan.originalPrice) - Number(plan.price)).toFixed(2)} Today!`}
+                  : `Save $${(Number(plan.originalPrice) - Number(plan.price)).toFixed(2)} Today!`}
               </p>
             </div>
           </div>

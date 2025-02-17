@@ -1,3 +1,4 @@
+
 import { useState, useEffect } from "react";
 import { Check } from "lucide-react";
 
@@ -62,11 +63,11 @@ export const OrderNotification = () => {
   const getPlanName = (plan: "yearly" | "lifetime" | "basic") => {
     switch (plan) {
       case "yearly":
-        return "Annual Advanced Protection Plan";
+        return "Annual Protection Plan";
       case "lifetime":
         return "Lifetime Price-Lock Plan";
       case "basic":
-        return "Annual Basic Protection Plan";
+        return "Basic Protection Plan";
     }
   };
 
