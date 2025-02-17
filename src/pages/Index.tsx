@@ -9,6 +9,7 @@ import { Plans } from "@/components/sections/Plans";
 import { Testimonials } from "@/components/sections/Testimonials";
 import { InteractiveFeatures } from "@/components/sections/InteractiveFeatures";
 import { FAQ } from "@/components/sections/FAQ";
+import { OrderNotification } from "@/components/notifications/OrderNotification";
 
 const features = [
   {
@@ -176,6 +177,8 @@ const Index = () => {
       <InteractiveFeatures />
       <Testimonials testimonials={testimonials} />
       <FAQ />
+
+      <OrderNotification />
 
       <footer className="bg-red-600 text-white text-center py-6">
         <p>
