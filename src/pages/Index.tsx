@@ -46,16 +46,29 @@ type Plan = {
   discount?: string;
   checkoutUrl: string;
   deviceLimit?: number;
+  monthlyPrice?: string;
+  monthlyOriginalPrice?: string;
 };
 
 const plans: Plan[] = [
   {
     type: "yearly",
-    description: "Get our best value with the annual plan! Protect unlimited devices with our premium security suite including VPN and identity protection.",
+    description: "Get our most comprehensive protection! Protect unlimited devices with our advanced security suite including VPN, identity protection, and premium features.",
     price: "119.99",
     originalPrice: "479.88",
     discount: "75",
     checkoutUrl: "https://payment.link/yearly-plan"
+  },
+  {
+    type: "basic",
+    description: "Perfect for small households! Get all essential security features with our Basic plan. Includes core protection features with a budget-friendly monthly option.",
+    price: "89.99",
+    originalPrice: "199.99",
+    discount: "55",
+    checkoutUrl: "https://payment.link/basic-plan",
+    deviceLimit: 5,
+    monthlyPrice: "9.99",
+    monthlyOriginalPrice: "16.99"
   },
   {
     type: "lifetime",
@@ -64,15 +77,6 @@ const plans: Plan[] = [
     originalPrice: "39.99",
     discount: "62",
     checkoutUrl: "https://payment.link/monthly-plan"
-  },
-  {
-    type: "basic",
-    description: "Perfect for small households! Protect up to 5 devices with essential security features at an affordable price.",
-    price: "69.99",
-    originalPrice: "199.99",
-    discount: "65",
-    checkoutUrl: "https://payment.link/basic-plan",
-    deviceLimit: 5
   }
 ];
 
