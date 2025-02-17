@@ -42,9 +42,27 @@ i18n
       escapeValue: false
     },
     detection: {
-      order: ['navigator', 'htmlTag', 'path', 'subdomain'],
-      caches: ['localStorage', 'cookie']
-    }
+      order: ['querystring', 'navigator', 'htmlTag', 'path', 'subdomain'],
+      lookupQuerystring: 'lng',
+      lookupCookie: 'i18next',
+      lookupLocalStorage: 'i18nextLng',
+      caches: ['localStorage', 'cookie'],
+      cookieMinutes: 10,
+      cookieDomain: 'myDomain'
+    },
+    load: 'languageOnly',
+    debug: true // This will help us see what's happening with language detection
   });
+
+// Force language detection on init
+const detectLanguage = () => {
+  const browserLang = navigator.language.split('-')[0];
+  if (['en', 'es', 'fr', 'de'].includes(browserLang)) {
+    i18n.changeLanguage(browserLang);
+  }
+};
+
+// Run language detection immediately
+detectLanguage();
 
 export default i18n;

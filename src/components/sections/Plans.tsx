@@ -20,6 +20,32 @@ export const Plans = ({ plans, onCheckout }: PlansProps) => {
   const { t } = useTranslation();
   const { formatPrice } = useCurrency();
 
+  const getPlanName = (type: "yearly" | "lifetime" | "basic") => {
+    switch (type) {
+      case "yearly":
+        return t('plans.advanced.name');
+      case "lifetime":
+        return t('plans.lifetime.name');
+      case "basic":
+        return t('plans.basic.name');
+      default:
+        return '';
+    }
+  };
+
+  const getPlanDescription = (type: "yearly" | "lifetime" | "basic") => {
+    switch (type) {
+      case "yearly":
+        return t('plans.advanced.description');
+      case "lifetime":
+        return t('plans.lifetime.description');
+      case "basic":
+        return t('plans.basic.description');
+      default:
+        return '';
+    }
+  };
+
   return (
     <section className="py-24 relative overflow-hidden" id="pricing">
       <div className="absolute inset-0 bg-gradient-to-b from-gray-50 to-white"></div>
@@ -78,7 +104,7 @@ export const Plans = ({ plans, onCheckout }: PlansProps) => {
                       ? 'text-emerald-600'
                       : 'text-purple-600'
                 }`}>
-                  {t(`plans.${plan.type}.name`)}
+                  {getPlanName(plan.type)}
                 </h4>
 
                 <div className="mb-6">
@@ -113,7 +139,7 @@ export const Plans = ({ plans, onCheckout }: PlansProps) => {
                 </div>
 
                 <p className="text-gray-600 mb-8 min-h-[80px]">
-                  {t(`plans.${plan.type}.description`)}
+                  {getPlanDescription(plan.type)}
                 </p>
 
                 <div className="space-y-4 mb-8">
