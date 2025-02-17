@@ -55,7 +55,7 @@ const plans: Plan[] = [
     price: "119.99",
     originalPrice: "479.88",
     discount: "75",
-    checkoutUrl: "https://payment.link/yearly-plan"
+    checkoutUrl: "https://whop.com/checkout/plan_IPzpliQOYYtGn?d2c=true"
   },
   {
     type: "lifetime",
@@ -63,7 +63,7 @@ const plans: Plan[] = [
     price: "14.99",
     originalPrice: "39.99",
     discount: "62",
-    checkoutUrl: "https://payment.link/monthly-plan"
+    checkoutUrl: "https://whop.com/checkout/plan_BWDLVUNJL0s7r?d2c=true"
   },
   {
     type: "basic",
@@ -71,7 +71,7 @@ const plans: Plan[] = [
     price: "89.99",
     originalPrice: "299.99",
     discount: "70",
-    checkoutUrl: "https://payment.link/basic-plan",
+    checkoutUrl: "https://whop.com/checkout/plan_b6ARjcro3NQ7W?d2c=true",
     deviceLimit: 5
   }
 ];
