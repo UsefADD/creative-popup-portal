@@ -1,10 +1,11 @@
-
+import { useState } from "react";
 import {
   Accordion,
   AccordionContent,
   AccordionItem,
   AccordionTrigger,
 } from "@/components/ui/accordion";
+import { SupportDialog } from "@/components/dialogs/SupportDialog";
 
 const faqs = [
   {
@@ -87,6 +88,8 @@ const faqs = [
 ];
 
 export const FAQ = () => {
+  const [showSupportDialog, setShowSupportDialog] = useState(false);
+
   return (
     <section className="py-24 bg-white">
       <div className="container mx-auto px-4">
@@ -118,13 +121,21 @@ export const FAQ = () => {
           <div className="mt-12 text-center">
             <p className="text-gray-600">
               Still have questions?{" "}
-              <a href="#" className="text-red-600 hover:text-red-700 font-medium">
+              <button
+                onClick={() => setShowSupportDialog(true)}
+                className="text-red-600 hover:text-red-700 font-medium"
+              >
                 Contact our support team
-              </a>
+              </button>
             </p>
           </div>
         </div>
       </div>
+
+      <SupportDialog 
+        open={showSupportDialog}
+        onOpenChange={setShowSupportDialog}
+      />
     </section>
   );
 };
