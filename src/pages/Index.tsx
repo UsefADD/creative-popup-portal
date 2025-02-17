@@ -1,4 +1,5 @@
 import { useState, useEffect } from "react";
+import { useTranslation } from "react-i18next";
 import { useToast } from "@/hooks/use-toast";
 import { WelcomeDialog } from "@/components/dialogs/WelcomeDialog";
 import { PrivacyDialog } from "@/components/dialogs/PrivacyDialog";
@@ -100,6 +101,7 @@ const testimonials = [
 ];
 
 const Index = () => {
+  const { t } = useTranslation();
   const [showPrivacyDialog, setShowPrivacyDialog] = useState(false);
   const [showCheckoutDialog, setShowCheckoutDialog] = useState(false);
   const [showWelcomeDialog, setShowWelcomeDialog] = useState(false);
@@ -145,7 +147,7 @@ const Index = () => {
   return (
     <div className="min-h-screen bg-gray-100 text-gray-800">
       <header className="bg-red-600 text-white p-6 text-center shadow-md">
-        <h1 className="text-3xl font-bold">McAfee Premium Family Protection</h1>
+        <h1 className="text-3xl font-bold">{t('header.title')}</h1>
       </header>
 
       <section className="relative text-white text-center py-24" 
@@ -156,17 +158,13 @@ const Index = () => {
           className="absolute inset-0 w-full h-full object-cover opacity-50"
         />
         <div className="relative z-10 max-w-4xl mx-auto">
-          <h2 className="text-5xl font-bold mb-4">Complete Family Security Solution</h2>
-          <p className="text-xl mb-8">
-            Protect your entire family with our comprehensive security suite. Choose from our Advanced
-            plan at $119.99/year, Basic plan at $89.99/year, or monthly options starting at $14.99.
-            Limited time offer - Save up to 75% on our annual plans!
-          </p>
+          <h2 className="text-5xl font-bold mb-4">{t('header.subtitle')}</h2>
+          <p className="text-xl mb-8">{t('hero.description')}</p>
           <button
             onClick={scrollToPricing}
             className="bg-green-500 hover:bg-green-600 text-white font-bold py-3 px-6 rounded-full transition-colors transform hover:scale-105 duration-200"
           >
-            View Our Plans
+            {t('hero.cta')}
           </button>
         </div>
       </section>

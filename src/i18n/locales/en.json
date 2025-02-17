@@ -1,0 +1,34 @@
+
+{
+  "header": {
+    "title": "McAfee Premium Family Protection",
+    "subtitle": "Complete Family Security Solution"
+  },
+  "hero": {
+    "description": "Protect your entire family with our comprehensive security suite. Choose from our Advanced plan at $119.99/year, Basic plan at $89.99/year, or monthly options starting at $14.99. Limited time offer - Save up to 75% on our annual plans!",
+    "cta": "View Our Plans"
+  },
+  "plans": {
+    "advanced": {
+      "name": "Annual Advanced Protection Plan",
+      "description": "Get our best value with the Annual Advanced plan! Protect unlimited devices with our premium security suite including VPN and identity protection."
+    },
+    "lifetime": {
+      "name": "Lifetime Price-Lock Plan",
+      "description": "Lock in our lowest monthly rate forever! Subscribe now to secure this special price that will never increase for the lifetime of your subscription."
+    },
+    "basic": {
+      "name": "Annual Basic Protection Plan",
+      "description": "Perfect for small households! Protect up to 5 devices with advanced security features including VPN and identity protection at an affordable price."
+    }
+  },
+  "features": {
+    "title": "Why Choose McAfee Family Protection?",
+    "protection": "Advanced Protection",
+    "privacy": "Privacy First",
+    "multiDevice": "Multi-Device Support",
+    "performance": "Optimized Performance",
+    "support": "24/7 Customer Support",
+    "identity": "Identity Theft Protection"
+  }
+}

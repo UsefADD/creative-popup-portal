@@ -1,0 +1,34 @@
+
+{
+  "header": {
+    "title": "Protección Familiar Premium de McAfee",
+    "subtitle": "Solución Completa de Seguridad Familiar"
+  },
+  "hero": {
+    "description": "Protege a toda tu familia con nuestra suite integral de seguridad. Elige entre nuestro plan Avanzado a $119.99/año, plan Básico a $89.99/año, u opciones mensuales desde $14.99. Oferta por tiempo limitado - ¡Ahorra hasta un 75% en nuestros planes anuales!",
+    "cta": "Ver Nuestros Planes"
+  },
+  "plans": {
+    "advanced": {
+      "name": "Plan de Protección Avanzada Anual",
+      "description": "¡Obtén nuestro mejor valor con el plan Avanzado Anual! Protege dispositivos ilimitados con nuestra suite de seguridad premium que incluye VPN y protección de identidad."
+    },
+    "lifetime": {
+      "name": "Plan Vitalicio con Precio Fijo",
+      "description": "¡Asegura nuestra tarifa mensual más baja para siempre! Suscríbete ahora para asegurar este precio especial que nunca aumentará durante la vida de tu suscripción."
+    },
+    "basic": {
+      "name": "Plan de Protección Básica Anual",
+      "description": "¡Perfecto para hogares pequeños! Protege hasta 5 dispositivos con características avanzadas de seguridad incluyendo VPN y protección de identidad a un precio asequible."
+    }
+  },
+  "features": {
+    "title": "¿Por qué elegir McAfee Family Protection?",
+    "protection": "Protección Avanzada",
+    "privacy": "Privacidad Primero",
+    "multiDevice": "Soporte Multi-Dispositivo",
+    "performance": "Rendimiento Optimizado",
+    "support": "Soporte al Cliente 24/7",
+    "identity": "Protección contra Robo de Identidad"
+  }
+}
