@@ -1,3 +1,4 @@
+
 import { useTranslation } from 'react-i18next';
 import { useCurrency } from '@/hooks/useCurrency';
 
@@ -58,10 +59,10 @@ export const Plans = ({ plans, onCheckout }: PlansProps) => {
       <div className="max-w-7xl mx-auto px-4 relative">
         <div className="text-center mb-16">
           <h3 className="text-4xl font-bold mb-6 bg-clip-text text-transparent bg-gradient-to-r from-red-600 to-red-800">
-            {t('plans.title', 'Choose Your Protection Plan')}
+            {t('plans.title')}
           </h3>
           <p className="text-xl text-gray-600 max-w-3xl mx-auto">
-            {t('plans.subtitle', 'Select the perfect protection plan for your needs. From basic 5-device protection to unlimited premium coverage.')}
+            {t('plans.subtitle')}
           </p>
         </div>
 
@@ -76,22 +77,10 @@ export const Plans = ({ plans, onCheckout }: PlansProps) => {
                     ? 'bg-gradient-to-br from-white via-white to-emerald-50 border-2 border-emerald-600 shadow-xl'
                     : 'bg-gradient-to-br from-white via-white to-purple-50 border-2 border-purple-600 shadow-xl'}`}
             >
-              {plan.type === "yearly" ? (
+              {plan.type === "yearly" && (
                 <div className="absolute -top-3 left-0 w-full flex justify-center z-10">
                   <div className="bg-gradient-to-r from-[#1652F0] to-blue-600 text-white px-6 py-1.5 rounded-full font-semibold text-sm shadow-lg animate-pulse">
                     Most Popular Choice
-                  </div>
-                </div>
-              ) : plan.type === "lifetime" ? (
-                <div className="absolute -top-3 left-0 w-full flex justify-center z-10">
-                  <div className="bg-gradient-to-r from-emerald-600 to-emerald-500 text-white px-6 py-1.5 rounded-full font-semibold text-sm shadow-lg">
-                    Limited Time Offer
-                  </div>
-                </div>
-              ) : (
-                <div className="absolute -top-3 left-0 w-full flex justify-center z-10">
-                  <div className="bg-gradient-to-r from-purple-600 to-purple-500 text-white px-6 py-1.5 rounded-full font-semibold text-sm shadow-lg">
-                    Best Value Starter
                   </div>
                 </div>
               )}
@@ -133,7 +122,7 @@ export const Plans = ({ plans, onCheckout }: PlansProps) => {
                           ? 'bg-emerald-100 text-emerald-600'
                           : 'bg-purple-100 text-purple-600'
                     }`}>
-                      {t('plans.save', 'Save')} {plan.discount}%
+                      {t('plans.save')} {plan.discount}%
                     </span>
                   </div>
                 </div>
@@ -173,7 +162,7 @@ export const Plans = ({ plans, onCheckout }: PlansProps) => {
                         : 'bg-gradient-to-r from-purple-600 to-purple-500 hover:from-purple-500 hover:to-purple-600 text-white shadow-lg hover:shadow-xl'
                   }`}
                 >
-                  {t('plans.getProtected', 'Get Protected Now')}
+                  {t('plans.getProtected')}
                 </button>
 
                 <p className={`text-sm mt-4 text-center ${
@@ -184,8 +173,8 @@ export const Plans = ({ plans, onCheckout }: PlansProps) => {
                       : 'text-purple-600'
                 }`}>
                   {plan.type === "lifetime"
-                    ? t('plans.lifetime.pricelock', `Never pay more than ${formatPrice('14.99')}/month - Price locked for life!`)
-                    : t('plans.savings', 'Save {{amount}} Today!', {
+                    ? t('plans.lifetime.pricelock', { price: formatPrice('14.99') })
+                    : t('plans.savings', {
                         amount: formatPrice((Number(plan.originalPrice) - Number(plan.price)).toFixed(2))
                       })}
                 </p>
