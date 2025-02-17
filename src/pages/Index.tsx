@@ -51,7 +51,7 @@ type Plan = {
 const plans: Plan[] = [
   {
     type: "yearly",
-    description: "Get our best value with the annual plan! Protect unlimited devices with our premium security suite including VPN and identity protection.",
+    description: "Get our best value with the Annual Advanced plan! Protect unlimited devices with our premium security suite including VPN and identity protection.",
     price: "119.99",
     originalPrice: "479.88",
     discount: "75",
@@ -67,10 +67,10 @@ const plans: Plan[] = [
   },
   {
     type: "basic",
-    description: "Perfect for small households! Protect up to 5 devices with essential security features at an affordable price.",
-    price: "69.99",
-    originalPrice: "199.99",
-    discount: "65",
+    description: "Perfect for small households! Protect up to 5 devices with advanced security features including VPN and identity protection at an affordable price.",
+    price: "89.99",
+    originalPrice: "299.99",
+    discount: "70",
     checkoutUrl: "https://payment.link/basic-plan",
     deviceLimit: 5
   }
@@ -158,9 +158,9 @@ const Index = () => {
         <div className="relative z-10 max-w-4xl mx-auto">
           <h2 className="text-5xl font-bold mb-4">Complete Family Security Solution</h2>
           <p className="text-xl mb-8">
-            Protect your entire family with our comprehensive security suite. Now offering two flexible
-            plans: Annual subscription at $149.99 or monthly plan at $14.99. Limited time
-            offer - Get 53% off the annual plan today!
+            Protect your entire family with our comprehensive security suite. Choose from our Advanced
+            plan at $119.99/year, Basic plan at $89.99/year, or monthly options starting at $14.99.
+            Limited time offer - Save up to 75% on our annual plans!
           </p>
           <button
             onClick={scrollToPricing}
