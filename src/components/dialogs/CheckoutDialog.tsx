@@ -5,7 +5,7 @@ import { X } from "lucide-react";
 interface CheckoutDialogProps {
   open: boolean;
   onOpenChange: (open: boolean) => void;
-  selectedPlan: "yearly" | "lifetime" | null;
+  selectedPlan: "yearly" | "lifetime" | "basic" | null;
   onPurchase: () => void;
 }
 
