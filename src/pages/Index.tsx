@@ -38,28 +38,40 @@ const features = [
 ];
 
 type Plan = {
-  type: "yearly" | "lifetime";
+  type: "yearly" | "lifetime" | "basic";
   description: string;
   price: string;
   originalPrice?: string;
   discount?: string;
   checkoutUrl: string;
+  deviceLimit?: number;
 };
 
 const plans: Plan[] = [
   {
     type: "yearly",
     description: "Get our best value with the annual plan! Protect unlimited devices with our premium security suite including VPN and identity protection.",
-    price: "69.99",
-    originalPrice: "149.99",
-    discount: "53",
+    price: "119.99",
+    originalPrice: "479.88",
+    discount: "75",
     checkoutUrl: "https://payment.link/yearly-plan"
   },
   {
     type: "lifetime",
-    description: "Flexible monthly protection for unlimited devices. Includes all premium security features and regular updates.",
+    description: "Lock in our lowest monthly rate forever! Subscribe now to secure this special price that will never increase for the lifetime of your subscription.",
     price: "14.99",
+    originalPrice: "39.99",
+    discount: "62",
     checkoutUrl: "https://payment.link/monthly-plan"
+  },
+  {
+    type: "basic",
+    description: "Perfect for small households! Protect up to 5 devices with essential security features at an affordable price.",
+    price: "69.99",
+    originalPrice: "199.99",
+    discount: "65",
+    checkoutUrl: "https://payment.link/basic-plan",
+    deviceLimit: 5
   }
 ];
 
@@ -90,7 +102,7 @@ const Index = () => {
   const [showPrivacyDialog, setShowPrivacyDialog] = useState(false);
   const [showCheckoutDialog, setShowCheckoutDialog] = useState(false);
   const [showWelcomeDialog, setShowWelcomeDialog] = useState(false);
-  const [selectedPlan, setSelectedPlan] = useState<"yearly" | "lifetime" | null>(null);
+  const [selectedPlan, setSelectedPlan] = useState<"yearly" | "lifetime" | "basic" | null>(null);
   const { toast } = useToast();
 
   useEffect(() => {
@@ -106,7 +118,7 @@ const Index = () => {
     }
   }, []);
 
-  const handleCheckout = (plan: "yearly" | "lifetime") => {
+  const handleCheckout = (plan: "yearly" | "lifetime" | "basic") => {
     const selectedPlanData = plans.find(p => p.type === plan);
     if (selectedPlanData?.checkoutUrl) {
       window.location.href = selectedPlanData.checkoutUrl;
