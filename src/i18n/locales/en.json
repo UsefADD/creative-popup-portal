@@ -9,26 +9,23 @@
     "cta": "View Our Plans"
   },
   "plans": {
+    "title": "Choose Your Protection Plan",
+    "subtitle": "Select the perfect protection plan for your needs. From basic 5-device protection to unlimited premium coverage.",
+    "save": "Save",
+    "getProtected": "Get Protected Now",
+    "savings": "Save {{amount}} Today!",
     "advanced": {
       "name": "Annual Advanced Protection Plan",
       "description": "Get our best value with the Annual Advanced plan! Protect unlimited devices with our premium security suite including VPN and identity protection."
     },
     "lifetime": {
       "name": "Lifetime Price-Lock Plan",
-      "description": "Lock in our lowest monthly rate forever! Subscribe now to secure this special price that will never increase for the lifetime of your subscription."
+      "description": "Lock in our lowest monthly rate forever! Subscribe now to secure this special price that will never increase for the lifetime of your subscription.",
+      "pricelock": "Never pay more than {{price}}/month - Price locked for life!"
     },
     "basic": {
       "name": "Annual Basic Protection Plan",
       "description": "Perfect for small households! Protect up to 5 devices with advanced security features including VPN and identity protection at an affordable price."
     }
-  },
-  "features": {
-    "title": "Why Choose McAfee Family Protection?",
-    "protection": "Advanced Protection",
-    "privacy": "Privacy First",
-    "multiDevice": "Multi-Device Support",
-    "performance": "Optimized Performance",
-    "support": "24/7 Customer Support",
-    "identity": "Identity Theft Protection"
   }
 }

@@ -5,30 +5,27 @@
     "subtitle": "Solution Complète de Sécurité Familiale"
   },
   "hero": {
-    "description": "Protégez toute votre famille avec notre suite de sécurité complète. Choisissez entre notre plan Avancé à 119.99$/an, plan Basique à 89.99$/an, ou options mensuelles à partir de 14.99$. Offre limitée - Économisez jusqu'à 75% sur nos plans annuels !",
+    "description": "Protégez toute votre famille avec notre suite de sécurité complète. Choisissez entre notre plan Avancé à €119.99/an, plan Basique à €89.99/an, ou options mensuelles à partir de €14.99. Offre limitée - Économisez jusqu'à 75% sur nos plans annuels !",
     "cta": "Voir Nos Plans"
   },
   "plans": {
+    "title": "Choisissez Votre Plan de Protection",
+    "subtitle": "Sélectionnez le plan de protection parfait pour vos besoins. De la protection basique pour 5 appareils à la couverture premium illimitée.",
+    "save": "Économisez",
+    "getProtected": "Protégez-vous Maintenant",
+    "savings": "Économisez {{amount}} Aujourd'hui !",
     "advanced": {
       "name": "Plan de Protection Avancée Annuel",
       "description": "Obtenez notre meilleure offre avec le plan Avancé Annuel ! Protégez des appareils illimités avec notre suite de sécurité premium incluant VPN et protection d'identité."
     },
     "lifetime": {
       "name": "Plan à Vie Prix Fixe",
-      "description": "Verrouillez notre tarif mensuel le plus bas pour toujours ! Abonnez-vous maintenant pour sécuriser ce prix spécial qui n'augmentera jamais pendant la durée de vie de votre abonnement."
+      "description": "Verrouillez notre tarif mensuel le plus bas pour toujours ! Abonnez-vous maintenant pour sécuriser ce prix spécial qui n'augmentera jamais pendant la durée de vie de votre abonnement.",
+      "pricelock": "Ne payez jamais plus de {{price}}/mois - Prix bloqué à vie !"
     },
     "basic": {
       "name": "Plan de Protection Basique Annuel",
       "description": "Parfait pour les petits foyers ! Protégez jusqu'à 5 appareils avec des fonctionnalités de sécurité avancées incluant VPN et protection d'identité à un prix abordable."
     }
-  },
-  "features": {
-    "title": "Pourquoi Choisir McAfee Family Protection ?",
-    "protection": "Protection Avancée",
-    "privacy": "Confidentialité Avant Tout",
-    "multiDevice": "Support Multi-Appareils",
-    "performance": "Performance Optimisée",
-    "support": "Support Client 24/7",
-    "identity": "Protection contre le Vol d'Identité"
   }
 }

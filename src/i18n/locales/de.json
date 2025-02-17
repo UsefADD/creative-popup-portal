@@ -5,30 +5,27 @@
     "subtitle": "Komplettlösung für Familiensicherheit"
   },
   "hero": {
-    "description": "Schützen Sie Ihre gesamte Familie mit unserer umfassenden Sicherheitssuite. Wählen Sie zwischen unserem Advanced-Plan für 99,99€/Jahr, Basic-Plan für 79,99€/Jahr oder monatlichen Optionen ab 12,99€. Zeitlich begrenztes Angebot - Sparen Sie bis zu 75% bei unseren Jahresplänen!",
+    "description": "Schützen Sie Ihre gesamte Familie mit unserer umfassenden Sicherheitssuite. Wählen Sie zwischen unserem Advanced-Plan für €119.99/Jahr, Basic-Plan für €89.99/Jahr oder monatlichen Optionen ab €14.99. Zeitlich begrenztes Angebot - Sparen Sie bis zu 75% bei unseren Jahresplänen!",
     "cta": "Unsere Pläne ansehen"
   },
   "plans": {
+    "title": "Wählen Sie Ihren Schutzplan",
+    "subtitle": "Wählen Sie den perfekten Schutzplan für Ihre Bedürfnisse. Von grundlegendem Schutz für 5 Geräte bis hin zu unbegrenzter Premium-Abdeckung.",
+    "save": "Sparen",
+    "getProtected": "Jetzt Schützen",
+    "savings": "Sparen Sie heute {{amount}}!",
     "advanced": {
       "name": "Jährlicher Advanced-Schutzplan",
       "description": "Sichern Sie sich unseren besten Wert mit dem jährlichen Advanced-Plan! Schützen Sie unbegrenzt viele Geräte mit unserer Premium-Sicherheitssuite inklusive VPN und Identitätsschutz."
     },
     "lifetime": {
       "name": "Lebenslanger Preisgarantie-Plan",
-      "description": "Sichern Sie sich unseren niedrigsten Monatstarif für immer! Abonnieren Sie jetzt, um sich diesen Sonderpreis zu sichern, der während der gesamten Laufzeit Ihres Abonnements nie steigen wird."
+      "description": "Sichern Sie sich unseren niedrigsten Monatstarif für immer! Abonnieren Sie jetzt, um sich diesen Sonderpreis zu sichern, der während der gesamten Laufzeit Ihres Abonnements nie steigen wird.",
+      "pricelock": "Zahlen Sie nie mehr als {{price}}/Monat - Preis lebenslang garantiert!"
     },
     "basic": {
       "name": "Jährlicher Basic-Schutzplan",
       "description": "Perfekt für kleine Haushalte! Schützen Sie bis zu 5 Geräte mit erweiterten Sicherheitsfunktionen einschließlich VPN und Identitätsschutz zu einem erschwinglichen Preis."
     }
-  },
-  "features": {
-    "title": "Warum McAfee Familienschutz wählen?",
-    "protection": "Erweiterter Schutz",
-    "privacy": "Datenschutz zuerst",
-    "multiDevice": "Multi-Geräte-Unterstützung",
-    "performance": "Optimierte Leistung",
-    "support": "24/7 Kundensupport",
-    "identity": "Identitätsdiebstahlschutz"
   }
 }
