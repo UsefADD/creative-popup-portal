@@ -139,10 +139,22 @@ export const OrderConfirmationDialog = ({
             <p className="font-bold text-gray-700 mb-2">
               Secure payment powered by industry leaders • 30-day money-back guarantee • 24/7 support
             </p>
-            <div className="flex justify-center gap-4 mt-4">
-              <img src="https://storage.googleapis.com/a1aa/image/visa.png" alt="Visa" className="h-8 opacity-75" />
-              <img src="https://storage.googleapis.com/a1aa/image/mastercard.png" alt="Mastercard" className="h-8 opacity-75" />
-              <img src="https://storage.googleapis.com/a1aa/image/amex.png" alt="American Express" className="h-8 opacity-75" />
+            <div className="flex justify-center gap-6 mt-4">
+              <img 
+                src="https://static.vecteezy.com/system/resources/previews/020/975/567/non_2x/visa-logo-visa-icon-transparent-free-png.png" 
+                alt="Visa" 
+                className="h-8 object-contain" 
+              />
+              <img 
+                src="https://e7.pngegg.com/pngimages/648/903/png-clipart-mastercard-logo-logo-payment-visa-mastercard-paypal-mastercard-icon-text-service.png" 
+                alt="Mastercard" 
+                className="h-8 object-contain" 
+              />
+              <img 
+                src="https://cdn-icons-png.flaticon.com/256/825/825539.png" 
+                alt="American Express" 
+                className="h-8 object-contain" 
+              />
             </div>
           </div>
         </div>
