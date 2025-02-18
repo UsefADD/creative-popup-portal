@@ -14,19 +14,6 @@
     "save": "Ahorra",
     "getProtected": "Protégete Ahora",
     "savings": "¡Ahorra {{amount}} Hoy!",
-    "mostPopular": "Elección Más Popular",
-    "features": {
-      "deviceProtection": "Protección para hasta {{count}} dispositivos",
-      "unlimitedDevices": "Protección Ilimitada de Dispositivos",
-      "antivirus": "Seguridad Antivirus Avanzada",
-      "identity": "Protección contra Robo de Identidad",
-      "vpn": "Servicio VPN Incluido"
-    },
-    "footer": {
-      "security": "Pago seguro respaldado por líderes de la industria",
-      "guarantee": "Garantía de devolución de 30 días",
-      "support": "Soporte 24/7"
-    },
     "advanced": {
       "name": "Plan de Protección Avanzada Anual",
       "description": "¡Obtén nuestro mejor valor con el plan Avanzado Anual! Protege dispositivos ilimitados con nuestra suite de seguridad premium que incluye VPN y protección de identidad."
@@ -39,94 +26,6 @@
     "basic": {
       "name": "Plan de Protección Básica Anual",
       "description": "¡Perfecto para hogares pequeños! Protege hasta 5 dispositivos con características avanzadas de seguridad incluyendo VPN y protección de identidad a un precio asequible."
-    }
-  },
-  "features": {
-    "title": "Protección todo en uno fácil de usar",
-    "subtitle": "para toda la familia",
-    "identity": {
-      "title": "Protección de Identidad",
-      "subtitle": "Protege la identidad y las finanzas de tu familia",
-      "monitoring": "Confía en el monitoreo 24/7 de la dark web para mantener segura tu información personal y financiera con Monitoreo de Identidad",
-      "creditMonitoring": "Recibe alertas de transacciones financieras y actividad crediticia sospechosa con el Monitoreo de Crédito y Transacciones",
-      "restoration": "Obtén ayuda práctica con la Restauración de Identidad de un experto basado en EE.UU. si ocurre un robo de identidad",
-      "coverage": "Disfruta de mayor tranquilidad con hasta 4 millones de euros en cobertura y restauración por robo de identidad"
-    },
-    "privacy": {
-      "title": "Privacidad",
-      "subtitle": "Mantén privada la información personal de tu familia",
-      "dataCleanup": "Recupera tus datos de sitios que los venden con la Limpieza de Datos Personales",
-      "vpn": "Mantén tu información personal segura con VPN Seguro en Wi-Fi público",
-      "accountCleanup": "Usa la Limpieza de Cuentas Online para eliminar cuentas no utilizadas",
-      "socialPrivacy": "Controla la privacidad en redes sociales con el Administrador de Privacidad Social"
-    },
-    "device": {
-      "title": "Protección de Dispositivos",
-      "subtitle": "Protege todos los dispositivos de tu familia contra virus y estafas",
-      "scamDetection": "Mantente seguro contra textos falsos con el Detector de Estafas por Texto",
-      "antivirus": "Protege dispositivos con el antivirus galardonado de McAfee",
-      "aiProtection": "Protección en tiempo real con tecnología impulsada por IA"
-    },
-    "awards": {
-      "title": "Reconocido por líderes de la industria durante más de 35 años"
-    }
-  },
-  "testimonials": {
-    "title": "Lo que dicen nuestros clientes",
-    "subtitle": "Únete a miles de familias satisfechas que confían en McAfee para proteger sus vidas digitales",
-    "rating": "Cliente Verificado",
-    "trust": "Confían en nosotros más de 500.000+ familias en todo el mundo",
-    "reviews": {
-      "sarah": {
-        "name": "Sara L.",
-        "quote": "Como madre de tres hijos, McAfee me da tranquilidad sabiendo que todos nuestros dispositivos están protegidos. ¡Los controles parentales son fantásticos!"
-      },
-      "john": {
-        "name": "Juan D.",
-        "quote": "La configuración fue perfecta en todos nuestros dispositivos familiares. ¡La función VPN es excelente para cuando viajamos. La mejor inversión en seguridad!"
-      },
-      "emily": {
-        "name": "Emma K.",
-        "quote": "Las funciones de protección de identidad detectaron un intento potencial de fraude en mi cuenta. ¡El soporte al cliente de McAfee fue increíblemente útil!"
-      },
-      "michael": {
-        "name": "Miguel T.",
-        "quote": "Llevamos usando McAfee durante 2 años. La protección en tiempo real y las actualizaciones regulares mantienen seguros los datos de nuestra familia."
-      }
-    }
-  },
-  "faq": {
-    "title": "Preguntas Frecuentes",
-    "subtitle": "Estas respuestas te ayudarán a conocer más sobre nuestros servicios",
-    "questions": {
-      "whatIsIdentityTheft": {
-        "question": "¿Qué es el robo de identidad?",
-        "answer": "El robo de identidad se refiere al uso no autorizado de la información personal identificable (IPI) de un individuo, como nombre, número de seguridad social, información bancaria y otra información sensible que puede comprometer la privacidad, seguridad y activos financieros de una persona."
-      },
-      "howToProtect": {
-        "question": "¿Cómo me protejo contra el robo de identidad?",
-        "answer": "Hay pasos simples y proactivos que puedes tomar ahora para proteger tu información personal del robo de identidad, tanto en línea como fuera de línea. Usa contraseñas fuertes y únicas, asegúrate de que tus dispositivos tengan el software de seguridad más reciente, supervisa tus cuentas y minimiza la cantidad de información personal que compartes en línea."
-      },
-      "whatToDo": {
-        "question": "¿Qué debo hacer si soy víctima de robo de identidad?",
-        "answer": "Comienza analizando la situación y revisando la información comprometida. Luego, notifica a las autoridades pertinentes, como tu banco, compañía de seguros, una estación de policía local o un centro nacional de denuncias de ciberdelitos."
-      },
-      "commonForm": {
-        "question": "¿Cuál es la forma más común de robo de identidad?",
-        "answer": "La forma más común de robo de identidad es el robo de identidad financiero, que se refiere a cualquier tipo de robo donde alguien usa la información de otra persona para obtener beneficios financieros."
-      },
-      "sharing": {
-        "question": "¿Cómo comparto la suscripción con mi familia?",
-        "answer": "Para compartir tu suscripción con tu familia, inicia sesión en tu cuenta y haz clic en 'Administrar usuarios y dispositivos'. Desde allí, puedes enviar una invitación a cada miembro de la familia."
-      },
-      "parentalControls": {
-        "question": "¿Qué incluye el control parental?",
-        "answer": "El control parental te brinda la capacidad de supervisar y mantener seguros a tus hijos en línea. Ve la actividad del dispositivo y la ubicación de tus hijos, establece reglas y límites de tiempo, y recibe notificaciones."
-      }
-    },
-    "support": {
-      "question": "¿Todavía tienes preguntas?",
-      "cta": "Contacta con nuestro equipo de soporte"
     }
   }
 }

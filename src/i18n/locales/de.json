@@ -14,19 +14,6 @@
     "save": "Sparen",
     "getProtected": "Jetzt Schützen",
     "savings": "Sparen Sie heute {{amount}}!",
-    "mostPopular": "Beliebteste Wahl",
-    "features": {
-      "deviceProtection": "Schutz für bis zu {{count}} Geräte",
-      "unlimitedDevices": "Unbegrenzter Geräteschutz",
-      "antivirus": "Erweiterte Antivirus-Sicherheit",
-      "identity": "Identitätsdiebstahl-Schutz",
-      "vpn": "VPN-Service inklusive"
-    },
-    "footer": {
-      "security": "Sichere Zahlung durch Branchenführer",
-      "guarantee": "30-Tage-Geld-zurück-Garantie",
-      "support": "24/7 Support"
-    },
     "advanced": {
       "name": "Jährlicher Advanced-Schutzplan",
       "description": "Sichern Sie sich unseren besten Wert mit dem jährlichen Advanced-Plan! Schützen Sie unbegrenzt viele Geräte mit unserer Premium-Sicherheitssuite inklusive VPN und Identitätsschutz."
@@ -39,94 +26,6 @@
     "basic": {
       "name": "Jährlicher Basic-Schutzplan",
       "description": "Perfekt für kleine Haushalte! Schützen Sie bis zu 5 Geräte mit erweiterten Sicherheitsfunktionen einschließlich VPN und Identitätsschutz zu einem erschwinglichen Preis."
-    }
-  },
-  "features": {
-    "title": "Einfach zu bedienender All-in-One-Schutz",
-    "subtitle": "für die ganze Familie",
-    "identity": {
-      "title": "Identitätsschutz",
-      "subtitle": "Schützen Sie die Identität und Finanzen Ihrer Familie",
-      "monitoring": "Verlassen Sie sich auf 24/7 Dark Web-Überwachung zum Schutz Ihrer persönlichen und finanziellen Daten mit Identitätsüberwachung",
-      "creditMonitoring": "Erhalten Sie Benachrichtigungen über verdächtige Finanztransaktionen und Kreditaktivitäten mit der Kredit- und Transaktionsüberwachung",
-      "restoration": "Erhalten Sie praktische Hilfe bei der Identitätswiederherstellung von einem US-basierten Experten im Falle eines Identitätsdiebstahls",
-      "coverage": "Genießen Sie mehr Sicherheit mit bis zu 4 Millionen Euro Identitätsdiebstahl-Deckung und Wiederherstellung"
-    },
-    "privacy": {
-      "title": "Datenschutz",
-      "subtitle": "Halten Sie die persönlichen Daten Ihrer Familie privat",
-      "dataCleanup": "Holen Sie sich Ihre Daten von Websites zurück, die sie verkaufen, mit der Persönlichen Datenbereinigung",
-      "vpn": "Schützen Sie Ihre persönlichen Daten mit Secure VPN in öffentlichen WLAN-Netzen",
-      "accountCleanup": "Nutzen Sie die Online-Kontobereinigung, um ungenutzte Konten zu entfernen",
-      "socialPrivacy": "Kontrollieren Sie die Privatsphäre in sozialen Medien mit dem Social Privacy Manager"
-    },
-    "device": {
-      "title": "Geräteschutz",
-      "subtitle": "Schützen Sie alle Geräte Ihrer Familie vor Viren und Betrug",
-      "scamDetection": "Bleiben Sie sicher vor gefälschten Texten mit dem Text-Betrugs-Detektor",
-      "antivirus": "Schützen Sie Geräte mit McAfees preisgekröntem Antivirus",
-      "aiProtection": "Echtzeit-Schutz mit KI-gestützter Technologie"
-    },
-    "awards": {
-      "title": "Seit über 35 Jahren von Branchenführern anerkannt"
-    }
-  },
-  "testimonials": {
-    "title": "Was unsere Kunden sagen",
-    "subtitle": "Schließen Sie sich Tausenden zufriedener Familien an, die McAfee vertrauen, um ihr digitales Leben zu schützen",
-    "rating": "Verifizierter Kunde",
-    "trust": "Wird von über 500.000+ Familien weltweit vertraut",
-    "reviews": {
-      "sarah": {
-        "name": "Sarah L.",
-        "quote": "Als Mutter von drei Kindern gibt mir McAfee die Gewissheit, dass alle unsere Geräte geschützt sind. Die Kindersicherung ist fantastisch!"
-      },
-      "john": {
-        "name": "John D.",
-        "quote": "Die Einrichtung war auf allen unseren Familiengeräten nahtlos. Die VPN-Funktion ist hervorragend für Reisen. Beste Sicherheitsinvestition!"
-      },
-      "emily": {
-        "name": "Emily K.",
-        "quote": "Die Identitätsschutzfunktionen haben einen potenziellen Betrugsversuch auf meinem Konto erkannt. Der McAfee-Kundensupport war unglaublich hilfreich!"
-      },
-      "michael": {
-        "name": "Michael T.",
-        "quote": "Wir nutzen McAfee seit 2 Jahren. Der Echtzeit-Schutz und die regelmäßigen Updates halten die Daten unserer Familie sicher."
-      }
-    }
-  },
-  "faq": {
-    "title": "Häufig gestellte Fragen",
-    "subtitle": "Diese Antworten helfen Ihnen, mehr über unsere Dienste zu erfahren",
-    "questions": {
-      "whatIsIdentityTheft": {
-        "question": "Was ist Identitätsdiebstahl?",
-        "answer": "Identitätsdiebstahl bezieht sich auf die unbefugte Verwendung der personenbezogenen Daten einer Person (PII), wie Name, Sozialversicherungsnummer, Bankinformationen und andere sensible Informationen, die die Privatsphäre, Sicherheit und finanziellen Vermögenswerte einer Person gefährden können."
-      },
-      "howToProtect": {
-        "question": "Wie schütze ich mich vor Identitätsdiebstahl?",
-        "answer": "Es gibt einfache, proaktive Schritte, die Sie jetzt unternehmen können, um Ihre persönlichen Daten vor Identitätsdiebstahl zu schützen - sowohl online als auch offline. Verwenden Sie starke, einzigartige Passwörter, stellen Sie sicher, dass Ihre Geräte über die neueste Sicherheitssoftware verfügen, überwachen Sie Ihre Konten und minimieren Sie die Menge an persönlichen Informationen, die Sie online teilen."
-      },
-      "whatToDo": {
-        "question": "Was soll ich tun, wenn ich Opfer von Identitätsdiebstahl werde?",
-        "answer": "Beginnen Sie damit, die Situation zu analysieren und die kompromittierten Informationen zu überprüfen. Benachrichtigen Sie dann die zuständigen Behörden, wie Ihre Bank, Versicherung, eine örtliche Polizeidienststelle oder eine nationale Cybercrime-Meldestelle."
-      },
-      "commonForm": {
-        "question": "Was ist die häufigste Form des Identitätsdiebstahls?",
-        "answer": "Die häufigste Form des Identitätsdiebstahls ist der finanzielle Identitätsdiebstahl, der sich auf jede Art von Diebstahl bezieht, bei dem jemand die Informationen einer anderen Person für finanzielle Gewinne nutzt."
-      },
-      "sharing": {
-        "question": "Wie teile ich das Abonnement mit meiner Familie?",
-        "answer": "Um Ihr Abonnement mit Ihrer Familie zu teilen, melden Sie sich bei Ihrem Konto an und klicken Sie auf 'Benutzer und Geräte verwalten'. Von dort aus können Sie eine Einladung an jedes Familienmitglied senden."
-      },
-      "parentalControls": {
-        "question": "Was bietet die Kindersicherung?",
-        "answer": "Die Kindersicherung gibt Ihnen die Möglichkeit, Ihre Kinder online zu beaufsichtigen und zu schützen. Sehen Sie die Geräteaktivität und den Standort Ihrer Kinder, setzen Sie Regeln und Zeitlimits, und erhalten Sie Benachrichtigungen."
-      }
-    },
-    "support": {
-      "question": "Noch Fragen?",
-      "cta": "Kontaktieren Sie unser Support-Team"
     }
   }
 }

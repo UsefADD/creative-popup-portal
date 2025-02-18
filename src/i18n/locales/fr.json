@@ -14,19 +14,6 @@
     "save": "Économisez",
     "getProtected": "Protégez-vous Maintenant",
     "savings": "Économisez {{amount}} Aujourd'hui !",
-    "mostPopular": "Choix le Plus Populaire",
-    "features": {
-      "deviceProtection": "Protection pour jusqu'à {{count}} appareils",
-      "unlimitedDevices": "Protection Illimitée d'Appareils",
-      "antivirus": "Sécurité Antivirus Avancée",
-      "identity": "Protection contre le Vol d'Identité",
-      "vpn": "Service VPN Inclus"
-    },
-    "footer": {
-      "security": "Paiement sécurisé par les leaders de l'industrie",
-      "guarantee": "Garantie de remboursement de 30 jours",
-      "support": "Support 24/7"
-    },
     "advanced": {
       "name": "Plan de Protection Avancée Annuel",
       "description": "Obtenez notre meilleure offre avec le plan Avancé Annuel ! Protégez des appareils illimités avec notre suite de sécurité premium incluant VPN et protection d'identité."
@@ -39,94 +26,6 @@
     "basic": {
       "name": "Plan de Protection Basique Annuel",
       "description": "Parfait pour les petits foyers ! Protégez jusqu'à 5 appareils avec des fonctionnalités de sécurité avancées incluant VPN et protection d'identité à un prix abordable."
-    }
-  },
-  "features": {
-    "title": "Protection tout-en-un facile à utiliser",
-    "subtitle": "pour toute la famille",
-    "identity": {
-      "title": "Protection de l'Identité",
-      "subtitle": "Protégez l'identité et les finances de votre famille",
-      "monitoring": "Comptez sur la surveillance 24/7 du dark web pour garder vos informations personnelles et financières en sécurité avec la Surveillance d'Identité",
-      "creditMonitoring": "Recevez des alertes sur les transactions financières et l'activité de crédit suspectes avec la Surveillance du Crédit et des Transactions",
-      "restoration": "Obtenez une aide pratique avec la Restauration d'Identité d'un expert basé aux États-Unis en cas de vol d'identité",
-      "coverage": "Profitez d'une plus grande tranquillité d'esprit avec jusqu'à 4 millions d'euros de couverture et restauration en cas de vol d'identité"
-    },
-    "privacy": {
-      "title": "Confidentialité",
-      "subtitle": "Gardez les informations personnelles de votre famille privées",
-      "dataCleanup": "Récupérez vos données des sites qui les vendent avec le Nettoyage de Données Personnelles",
-      "vpn": "Gardez vos informations personnelles en sécurité avec VPN Sécurisé sur le Wi-Fi public",
-      "accountCleanup": "Utilisez le Nettoyage de Comptes en Ligne pour supprimer les comptes inutilisés",
-      "socialPrivacy": "Contrôlez la confidentialité sur les réseaux sociaux avec le Gestionnaire de Confidentialité Sociale"
-    },
-    "device": {
-      "title": "Protection des Appareils",
-      "subtitle": "Protégez tous les appareils de votre famille contre les virus et les arnaques",
-      "scamDetection": "Restez en sécurité contre les faux textos avec le Détecteur d'Arnaques par SMS",
-      "antivirus": "Protégez les appareils avec l'antivirus primé de McAfee",
-      "aiProtection": "Protection en temps réel avec technologie alimentée par l'IA"
-    },
-    "awards": {
-      "title": "Reconnu par les leaders de l'industrie depuis plus de 35 ans"
-    }
-  },
-  "testimonials": {
-    "title": "Ce que disent nos clients",
-    "subtitle": "Rejoignez des milliers de familles satisfaites qui font confiance à McAfee pour protéger leur vie numérique",
-    "rating": "Client Vérifié",
-    "trust": "Fait confiance par plus de 500.000+ familles dans le monde",
-    "reviews": {
-      "sarah": {
-        "name": "Sarah L.",
-        "quote": "En tant que mère de trois enfants, McAfee me donne la tranquillité d'esprit en sachant que tous nos appareils sont protégés. Le contrôle parental est fantastique !"
-      },
-      "john": {
-        "name": "Jean D.",
-        "quote": "L'installation était parfaite sur tous nos appareils familiaux. La fonction VPN est excellente pour les voyages. Le meilleur investissement en sécurité !"
-      },
-      "emily": {
-        "name": "Émilie K.",
-        "quote": "Les fonctions de protection d'identité ont détecté une tentative de fraude potentielle sur mon compte. Le support client de McAfee a été incroyablement utile !"
-      },
-      "michael": {
-        "name": "Michel T.",
-        "quote": "Nous utilisons McAfee depuis 2 ans. La protection en temps réel et les mises à jour régulières gardent les données de notre famille en sécurité."
-      }
-    }
-  },
-  "faq": {
-    "title": "Questions Fréquentes",
-    "subtitle": "Ces réponses vous aideront à en savoir plus sur nos services",
-    "questions": {
-      "whatIsIdentityTheft": {
-        "question": "Qu'est-ce que le vol d'identité ?",
-        "answer": "Le vol d'identité fait référence à l'utilisation non autorisée des informations personnelles identifiables (IPI) d'un individu, comme le nom, le numéro de sécurité sociale, les informations bancaires et autres informations sensibles qui peuvent compromettre la vie privée, la sécurité et les actifs financiers d'une personne."
-      },
-      "howToProtect": {
-        "question": "Comment me protéger contre le vol d'identité ?",
-        "answer": "Il existe des étapes simples et proactives que vous pouvez prendre maintenant pour protéger vos informations personnelles contre le vol d'identité, tant en ligne que hors ligne. Utilisez des mots de passe forts et uniques, assurez-vous que vos appareils disposent des derniers logiciels de sécurité, surveillez vos comptes et minimisez la quantité d'informations personnelles que vous partagez en ligne."
-      },
-      "whatToDo": {
-        "question": "Que dois-je faire si je suis victime d'un vol d'identité ?",
-        "answer": "Commencez par analyser la situation et examiner les informations compromises. Ensuite, notifiez les autorités compétentes, comme votre banque, votre compagnie d'assurance, un poste de police local ou un centre national de signalement de la cybercriminalité."
-      },
-      "commonForm": {
-        "question": "Quelle est la forme la plus courante de vol d'identité ?",
-        "answer": "La forme la plus courante de vol d'identité est le vol d'identité financier, qui fait référence à tout type de vol où quelqu'un utilise les informations d'une autre personne pour obtenir des gains financiers."
-      },
-      "sharing": {
-        "question": "Comment partager l'abonnement avec ma famille ?",
-        "answer": "Pour partager votre abonnement avec votre famille, connectez-vous à votre compte et cliquez sur 'Gérer les utilisateurs et les appareils'. De là, vous pouvez envoyer une invitation à chaque membre de la famille."
-      },
-      "parentalControls": {
-        "question": "Que comprend le contrôle parental ?",
-        "answer": "Le contrôle parental vous donne la possibilité de superviser et de garder vos enfants en sécurité en ligne. Visualisez l'activité de l'appareil et l'emplacement de vos enfants, définissez des règles et des limites de temps, et recevez des notifications."
-      }
-    },
-    "support": {
-      "question": "Vous avez encore des questions ?",
-      "cta": "Contactez notre équipe de support"
     }
   }
 }
