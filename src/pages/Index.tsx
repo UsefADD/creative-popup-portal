@@ -11,6 +11,7 @@ import { Testimonials } from "@/components/sections/Testimonials";
 import { InteractiveFeatures } from "@/components/sections/InteractiveFeatures";
 import { FAQ } from "@/components/sections/FAQ";
 import { OrderNotification } from "@/components/notifications/OrderNotification";
+import { OrderConfirmationDialog } from "@/components/dialogs/OrderConfirmationDialog";
 
 const features = [
   {
@@ -105,7 +106,10 @@ const Index = () => {
   const [showPrivacyDialog, setShowPrivacyDialog] = useState(false);
   const [showCheckoutDialog, setShowCheckoutDialog] = useState(false);
   const [showWelcomeDialog, setShowWelcomeDialog] = useState(false);
+  const [showOrderConfirmation, setShowOrderConfirmation] = useState(false);
   const [selectedPlan, setSelectedPlan] = useState<"yearly" | "lifetime" | "basic" | null>(null);
+  const [selectedPlanForOrder, setSelectedPlanForOrder] = useState<"yearly" | "lifetime" | "basic" | null>(null);
+  const [selectedPlanUrl, setSelectedPlanUrl] = useState<string>("");
   const { toast } = useToast();
 
   useEffect(() => {
@@ -123,9 +127,9 @@ const Index = () => {
 
   const handleCheckout = (plan: "yearly" | "lifetime" | "basic") => {
     const selectedPlanData = plans.find(p => p.type === plan);
-    if (selectedPlanData?.checkoutUrl) {
-      window.location.href = selectedPlanData.checkoutUrl;
-    }
+    setSelectedPlanForOrder(plan);
+    setSelectedPlanUrl(selectedPlanData?.checkoutUrl || "");
+    setShowOrderConfirmation(true);
   };
 
   const handlePurchase = () => {
@@ -196,6 +200,13 @@ const Index = () => {
         open={showWelcomeDialog}
         onOpenChange={setShowWelcomeDialog}
         onScrollToPricing={scrollToPricing}
+      />
+
+      <OrderConfirmationDialog
+        open={showOrderConfirmation}
+        onOpenChange={setShowOrderConfirmation}
+        planType={selectedPlanForOrder}
+        checkoutUrl={selectedPlanUrl}
       />
 
       <PrivacyDialog
