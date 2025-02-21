@@ -57,7 +57,7 @@ export const Testimonials = ({ testimonials }: TestimonialsProps) => (
       </div>
       <div className="mt-12 text-center">
         <p className="text-gray-600 font-medium">
-          Trusted by over 500,000+ families worldwide
+          Trusted by over 100,000+ families worldwide
         </p>
         <div className="flex justify-center items-center gap-2 mt-4">
           {[1, 2, 3, 4, 5].map((star) => (

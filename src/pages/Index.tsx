@@ -99,6 +99,26 @@ const testimonials = [
     quote: "We've been using McAfee for 2 years now. The real-time protection and regular updates keep our family's data safe and secure.",
     image: "https://storage.googleapis.com/a1aa/image/kwDjgktleWPB6n0BKHqcgj0MFTQ46cviOkdvg2uNRoI.jpg",
   },
+  {
+    name: "David R.",
+    quote: "The password manager and secure browsing features have made my online experience much safer. Great value for money!",
+    image: "https://storage.googleapis.com/a1aa/image/Y-09LNkV_EDixOUG-iLukcduy3OAUzFrfz2LPH7UUHo.jpg",
+  },
+  {
+    name: "Lisa M.",
+    quote: "After experiencing a security breach with another provider, switching to McAfee was the best decision. Haven't had any issues since!",
+    image: "https://storage.googleapis.com/a1aa/image/qEVZhxzZ9Ik1kAlHcOQiQpSvSxvhWf_zwjK4Ce2PWN4.jpg",
+  },
+  {
+    name: "Robert H.",
+    quote: "The cross-platform protection is fantastic. All our family's devices are secured with one subscription. Highly recommend!",
+    image: "https://storage.googleapis.com/a1aa/image/NDLKyBMUaptvrBieksu2fZCETEUWwEbLuF8mVSONlyY.jpg",
+  },
+  {
+    name: "Jennifer P.",
+    quote: "The mobile protection features are outstanding. Feel much safer doing online banking and shopping on my phone now.",
+    image: "https://storage.googleapis.com/a1aa/image/kwDjgktleWPB6n0BKHqcgj0MFTQ46cviOkdvg2uNRoI.jpg",
+  }
 ];
 
 const Index = () => {
