@@ -74,7 +74,7 @@ const plans: Plan[] = [
     price: "89.99",
     originalPrice: "299.99",
     discount: "70",
-    checkoutUrl: "https://whop.com/checkout/plan_oJVgJqRjWayP3?d2c=true",
+    checkoutUrl: "https://whop.com/checkout/plan_EXgIEtjEzLDYM?d2c=true",
     deviceLimit: 5
   }
 ];
