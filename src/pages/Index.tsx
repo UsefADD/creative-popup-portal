@@ -102,22 +102,22 @@ const testimonials = [
   {
     name: "David R.",
     quote: "The password manager and secure browsing features have made my online experience much safer. Great value for money!",
-    image: "https://storage.googleapis.com/a1aa/image/8cc0d569-c7fd-41c1-a6bd-4432f5282ad8.jpg",
+    image: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?fit=crop&w=800&q=80",
   },
   {
     name: "Lisa M.",
     quote: "After experiencing a security breach with another provider, switching to McAfee was the best decision. Haven't had any issues since!",
-    image: "https://storage.googleapis.com/a1aa/image/e6687aec-aa67-4306-a07d-e9e56a78.jpg",
+    image: "https://images.unsplash.com/photo-1494790108377-be9c29b29330?fit=crop&w=800&q=80",
   },
   {
     name: "Robert H.",
     quote: "The cross-platform protection is fantastic. All our family's devices are secured with one subscription. Highly recommend!",
-    image: "https://storage.googleapis.com/a1aa/image/02186dad-cd13-4467-b497-35fb79354325.jpg",
+    image: "https://images.unsplash.com/photo-1500648767791-00dcc994a43e?fit=crop&w=800&q=80",
   },
   {
     name: "Jennifer P.",
     quote: "The mobile protection features are outstanding. Feel much safer doing online banking and shopping on my phone now.",
-    image: "https://storage.googleapis.com/a1aa/image/d719ff5e-c70d-47b4-b9f5-262e321abc23.jpg",
+    image: "https://images.unsplash.com/photo-1438761681033-6461ffad8d80?fit=crop&w=800&q=80",
   }
 ];
 
