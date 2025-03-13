@@ -110,9 +110,6 @@ export const Plans = ({ plans, onCheckout }: PlansProps) => {
                     }`}>
                       {formatPrice(plan.price)}
                     </span>
-                    <span className="text-gray-600">
-                      {"/year"}
-                    </span>
                   </div>
                   <div className="flex items-center gap-3 mt-2">
                     <span className="line-through text-gray-500 text-lg">

@@ -62,8 +62,8 @@ export const WelcomeDialog = ({ open, onOpenChange, onScrollToPricing }: Welcome
               </div>
               <div className="text-center">
                 <div className="text-2xl font-bold text-red-600">
-                  <span className="line-through text-gray-500">€375/year</span>
-                  <span className="ml-2">€89.99/year</span>
+                  <span className="line-through text-gray-500">€375</span>
+                  <span className="ml-2">€89.99</span>
                 </div>
                 <p className="text-sm text-green-600 mt-1">Save €285.01 with this limited-time offer!</p>
               </div>
@@ -78,7 +78,7 @@ export const WelcomeDialog = ({ open, onOpenChange, onScrollToPricing }: Welcome
           </div>
           <p className="text-sm text-gray-500 flex items-center justify-center gap-1 font-bold">
             <Lock className="w-4 h-4" />
-            <span>Limited time offer for new customers. 76% discount applies to first year only.</span>
+            <span>Limited time offer for new customers. 76% discount applies to first payment only.</span>
           </p>
         </div>
       </DialogContent>
