@@ -66,7 +66,7 @@ export const WelcomeDialog = ({ open, onOpenChange, onScrollToPricing }: Welcome
               </div>
             </div>
             <button
-              onClick={scrollToPricing}
+              onClick={onScrollToPricing}
               className="bg-red-600 hover:bg-red-700 text-white font-bold py-4 px-8 rounded-full transition-all transform hover:scale-105 duration-200 shadow-lg flex items-center justify-center mx-auto gap-2"
             >
               <CheckCircle className="w-5 h-5" />
