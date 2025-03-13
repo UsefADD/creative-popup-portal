@@ -40,9 +40,12 @@ export const WelcomeDialog = ({ open, onOpenChange, onScrollToPricing }: Welcome
               Save 76% on Annual Advanced Protection!
             </h3>
             <div className="bg-white p-4 rounded-lg mb-6">
-              <p className="text-gray-700 text-lg mb-4">
+              <p className="text-gray-700 text-lg mb-2">
                 Subscribe now and get our complete advanced security package at an incredible discount:
               </p>
+              <div className="bg-green-100 text-green-800 px-4 py-2 rounded-full font-semibold text-sm mb-4 inline-block">
+                One-time payment only - No recurring charges!
+              </div>
               <div className="space-y-3 text-left mb-4">
                 <div className="flex items-center text-gray-700">
                   <CheckCircle className="w-5 h-5 text-green-500 mr-3 flex-shrink-0" />

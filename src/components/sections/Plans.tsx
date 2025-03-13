@@ -64,13 +64,16 @@ export const Plans = ({ plans, onCheckout }: PlansProps) => {
           <p className="text-xl text-gray-600 max-w-3xl mx-auto">
             {t('plans.subtitle')}
           </p>
+          <div className="mt-4 inline-block bg-green-100 text-green-800 px-6 py-2 rounded-full font-semibold text-lg animate-pulse">
+            One-time payment only - No monthly subscriptions!
+          </div>
         </div>
 
-        <div className="grid md:grid-cols-3 gap-8 max-w-7xl mx-auto">
+        <div className="flex flex-col md:flex-row justify-center items-center gap-8 max-w-5xl mx-auto">
           {plans.map((plan) => (
             <div 
               key={plan.type}
-              className={`relative overflow-hidden rounded-2xl transition-all duration-300 hover:transform hover:-translate-y-2
+              className={`relative overflow-hidden rounded-2xl transition-all duration-300 hover:transform hover:-translate-y-2 w-full md:max-w-md
                 ${plan.type === "yearly" 
                   ? 'bg-gradient-to-br from-white via-white to-blue-50 border-2 border-[#1652F0] shadow-2xl' 
                   : plan.type === "lifetime"
@@ -108,7 +111,7 @@ export const Plans = ({ plans, onCheckout }: PlansProps) => {
                       {formatPrice(plan.price)}
                     </span>
                     <span className="text-gray-600">
-                      {plan.type === "lifetime" ? "/month" : "/year"}
+                      {"/year"}
                     </span>
                   </div>
                   <div className="flex items-center gap-3 mt-2">
@@ -124,6 +127,9 @@ export const Plans = ({ plans, onCheckout }: PlansProps) => {
                     }`}>
                       {t('plans.save')} {plan.discount}%
                     </span>
+                  </div>
+                  <div className="mt-3 text-green-600 font-semibold inline-block border border-green-200 bg-green-50 px-3 py-1 rounded-lg">
+                    One-time payment only
                   </div>
                 </div>
 
