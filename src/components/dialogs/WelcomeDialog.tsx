@@ -37,7 +37,7 @@ export const WelcomeDialog = ({ open, onOpenChange, onScrollToPricing }: Welcome
               <AlertCircle className="w-12 h-12 text-red-600 mx-auto" />
             </div>
             <h3 className="text-3xl font-bold text-red-600 mb-4">
-              Save 75% on Annual Advanced Protection!
+              Save 76% on Annual Advanced Protection!
             </h3>
             <div className="bg-white p-4 rounded-lg mb-6">
               <p className="text-gray-700 text-lg mb-4">
@@ -59,23 +59,23 @@ export const WelcomeDialog = ({ open, onOpenChange, onScrollToPricing }: Welcome
               </div>
               <div className="text-center">
                 <div className="text-2xl font-bold text-red-600">
-                  <span className="line-through text-gray-500">€479.88/year</span>
-                  <span className="ml-2">€119.99/year</span>
+                  <span className="line-through text-gray-500">€375/year</span>
+                  <span className="ml-2">€89.99/year</span>
                 </div>
-                <p className="text-sm text-green-600 mt-1">Save €359.89 with this limited-time offer!</p>
+                <p className="text-sm text-green-600 mt-1">Save €285.01 with this limited-time offer!</p>
               </div>
             </div>
             <button
-              onClick={onScrollToPricing}
+              onClick={scrollToPricing}
               className="bg-red-600 hover:bg-red-700 text-white font-bold py-4 px-8 rounded-full transition-all transform hover:scale-105 duration-200 shadow-lg flex items-center justify-center mx-auto gap-2"
             >
               <CheckCircle className="w-5 h-5" />
-              Claim Your 75% Discount Now
+              Claim Your 76% Discount Now
             </button>
           </div>
           <p className="text-sm text-gray-500 flex items-center justify-center gap-1 font-bold">
             <Lock className="w-4 h-4" />
-            <span>Limited time offer for new customers. 75% discount applies to first year only.</span>
+            <span>Limited time offer for new customers. 76% discount applies to first year only.</span>
           </p>
         </div>
       </DialogContent>

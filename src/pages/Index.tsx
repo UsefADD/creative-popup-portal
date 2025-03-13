@@ -1,4 +1,3 @@
-
 import { useState, useEffect } from "react";
 import { useTranslation } from "react-i18next";
 import { useToast } from "@/hooks/use-toast";
@@ -42,7 +41,7 @@ const features = [
 ];
 
 type Plan = {
-  type: "yearly" | "lifetime" | "basic";
+  type: "yearly" | "basic";
   description: string;
   price: string;
   originalPrice?: string;
@@ -55,25 +54,17 @@ const plans: Plan[] = [
   {
     type: "yearly",
     description: "Get our best value with the Annual Advanced plan! Protect unlimited devices with our premium security suite including VPN and identity protection.",
-    price: "119.99",
-    originalPrice: "479.88",
-    discount: "75",
+    price: "89.99",
+    originalPrice: "375",
+    discount: "76",
     checkoutUrl: "https://whop.com/checkout/plan_6Zhjmgsm8OK44?d2c=true"
-  },
-  {
-    type: "lifetime",
-    description: "Lock in our lowest monthly rate forever! Subscribe now to secure this special price that will never increase for the lifetime of your subscription.",
-    price: "14.99",
-    originalPrice: "39.99",
-    discount: "62",
-    checkoutUrl: "https://whop.com/checkout/plan_Rq6rrlvMM0TVR?d2c=true"
   },
   {
     type: "basic",
     description: "Perfect for small households! Protect up to 5 devices with advanced security features including VPN and identity protection at an affordable price.",
-    price: "89.99",
-    originalPrice: "299.99",
-    discount: "70",
+    price: "49.99",
+    originalPrice: "250",
+    discount: "80",
     checkoutUrl: "https://whop.com/checkout/plan_v7Agslb8JPG4u?d2c=true",
     deviceLimit: 5
   }
@@ -128,8 +119,8 @@ const Index = () => {
   const [showCheckoutDialog, setShowCheckoutDialog] = useState(false);
   const [showWelcomeDialog, setShowWelcomeDialog] = useState(false);
   const [showOrderConfirmation, setShowOrderConfirmation] = useState(false);
-  const [selectedPlan, setSelectedPlan] = useState<"yearly" | "lifetime" | "basic" | null>(null);
-  const [selectedPlanForOrder, setSelectedPlanForOrder] = useState<"yearly" | "lifetime" | "basic" | null>(null);
+  const [selectedPlan, setSelectedPlan] = useState<"yearly" | "basic" | null>(null);
+  const [selectedPlanForOrder, setSelectedPlanForOrder] = useState<"yearly" | "basic" | null>(null);
   const [selectedPlanUrl, setSelectedPlanUrl] = useState<string>("");
   const { toast } = useToast();
 
@@ -146,7 +137,7 @@ const Index = () => {
     }
   }, []);
 
-  const handleCheckout = (plan: "yearly" | "lifetime" | "basic") => {
+  const handleCheckout = (plan: "yearly" | "basic") => {
     const selectedPlanData = plans.find(p => p.type === plan);
     setSelectedPlanForOrder(plan);
     setSelectedPlanUrl(selectedPlanData?.checkoutUrl || "");

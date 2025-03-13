@@ -5,7 +5,7 @@
     "subtitle": "Solution Complète de Sécurité Familiale"
   },
   "hero": {
-    "description": "Protégez toute votre famille avec notre suite de sécurité complète. Choisissez entre notre plan Avancé à €119.99/an, plan Basique à €89.99/an, ou options mensuelles à partir de €14.99. Offre limitée - Économisez jusqu'à 75% sur nos plans annuels !",
+    "description": "Protégez toute votre famille avec notre suite de sécurité complète. Choisissez entre notre plan Avancé à €89.99/an ou plan Basique à €49.99/an. Offre limitée - Économisez jusqu'à 80% sur nos plans annuels !",
     "cta": "Voir Nos Plans"
   },
   "plans": {
@@ -17,11 +17,6 @@
     "advanced": {
       "name": "Plan de Protection Avancée Annuel",
       "description": "Obtenez notre meilleure offre avec le plan Avancé Annuel ! Protégez des appareils illimités avec notre suite de sécurité premium incluant VPN et protection d'identité."
-    },
-    "lifetime": {
-      "name": "Plan à Vie Prix Fixe",
-      "description": "Verrouillez notre tarif mensuel le plus bas pour toujours ! Abonnez-vous maintenant pour sécuriser ce prix spécial qui n'augmentera jamais pendant la durée de vie de votre abonnement.",
-      "pricelock": "Ne payez jamais plus de {{price}}/mois - Prix bloqué à vie !"
     },
     "basic": {
       "name": "Plan de Protection Basique Annuel",

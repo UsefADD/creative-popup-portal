@@ -5,7 +5,7 @@
     "subtitle": "Komplettlösung für Familiensicherheit"
   },
   "hero": {
-    "description": "Schützen Sie Ihre gesamte Familie mit unserer umfassenden Sicherheitssuite. Wählen Sie zwischen unserem Advanced-Plan für €119.99/Jahr, Basic-Plan für €89.99/Jahr oder monatlichen Optionen ab €14.99. Zeitlich begrenztes Angebot - Sparen Sie bis zu 75% bei unseren Jahresplänen!",
+    "description": "Schützen Sie Ihre gesamte Familie mit unserer umfassenden Sicherheitssuite. Wählen Sie zwischen unserem Advanced-Plan für €89.99/Jahr oder Basic-Plan für €49.99/Jahr. Zeitlich begrenztes Angebot - Sparen Sie bis zu 80% bei unseren Jahresplänen!",
     "cta": "Unsere Pläne ansehen"
   },
   "plans": {
@@ -17,11 +17,6 @@
     "advanced": {
       "name": "Jährlicher Advanced-Schutzplan",
       "description": "Sichern Sie sich unseren besten Wert mit dem jährlichen Advanced-Plan! Schützen Sie unbegrenzt viele Geräte mit unserer Premium-Sicherheitssuite inklusive VPN und Identitätsschutz."
-    },
-    "lifetime": {
-      "name": "Lebenslanger Preisgarantie-Plan",
-      "description": "Sichern Sie sich unseren niedrigsten Monatstarif für immer! Abonnieren Sie jetzt, um sich diesen Sonderpreis zu sichern, der während der gesamten Laufzeit Ihres Abonnements nie steigen wird.",
-      "pricelock": "Zahlen Sie nie mehr als {{price}}/Monat - Preis lebenslang garantiert!"
     },
     "basic": {
       "name": "Jährlicher Basic-Schutzplan",

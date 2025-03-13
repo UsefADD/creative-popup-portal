@@ -5,7 +5,7 @@
     "subtitle": "Complete Family Security Solution"
   },
   "hero": {
-    "description": "Protect your entire family with our comprehensive security suite. Choose from our Advanced plan at $119.99/year, Basic plan at $89.99/year, or monthly options starting at $14.99. Limited time offer - Save up to 75% on our annual plans!",
+    "description": "Protect your entire family with our comprehensive security suite. Choose from our Advanced plan at $89.99/year or Basic plan at $49.99/year. Limited time offer - Save up to 80% on our annual plans!",
     "cta": "View Our Plans"
   },
   "plans": {
@@ -17,11 +17,6 @@
     "advanced": {
       "name": "Annual Advanced Protection Plan",
       "description": "Get our best value with the Annual Advanced plan! Protect unlimited devices with our premium security suite including VPN and identity protection."
-    },
-    "lifetime": {
-      "name": "Lifetime Price-Lock Plan",
-      "description": "Lock in our lowest monthly rate forever! Subscribe now to secure this special price that will never increase for the lifetime of your subscription.",
-      "pricelock": "Never pay more than {{price}}/month - Price locked for life!"
     },
     "basic": {
       "name": "Annual Basic Protection Plan",
