@@ -62,10 +62,10 @@ export const WelcomeDialog = ({ open, onOpenChange, onScrollToPricing }: Welcome
               </div>
               <div className="text-center">
                 <div className="text-2xl font-bold text-red-600">
-                  <span className="line-through text-gray-500">€375</span>
-                  <span className="ml-2">€89.99</span>
+                  <span className="line-through text-gray-500">$375</span>
+                  <span className="ml-2">$89.99</span>
                 </div>
-                <p className="text-sm text-green-600 mt-1">Save €285.01 with this limited-time offer!</p>
+                <p className="text-sm text-green-600 mt-1">Save $285.01 with this limited-time offer!</p>
               </div>
             </div>
             <button

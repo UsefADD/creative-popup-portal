@@ -36,26 +36,26 @@ export const OrderConfirmationDialog = ({
       case "yearly":
         return {
           name: "Annual Advanced Protection",
-          originalPrice: "€479.88",
-          price: "€119.99",
-          savings: "€359.89",
-          discount: "75%"
+          originalPrice: "$375",
+          price: "$89.99",
+          savings: "$285.01",
+          discount: "76%"
         };
       case "lifetime":
         return {
           name: "Monthly Protection",
-          originalPrice: "€39.99",
-          price: "€14.99",
-          savings: "€25.00",
+          originalPrice: "$39.99",
+          price: "$14.99",
+          savings: "$25.00",
           discount: "62%"
         };
       case "basic":
         return {
           name: "Basic Annual Protection",
-          originalPrice: "€299.99",
-          price: "€89.99",
-          savings: "€210.00",
-          discount: "70%"
+          originalPrice: "$250",
+          price: "$49.99",
+          savings: "$200.01",
+          discount: "80%"
         };
       default:
         return null;
@@ -105,6 +105,10 @@ export const OrderConfirmationDialog = ({
               <div className="flex justify-between items-center">
                 <span className="text-gray-600">You Save:</span>
                 <span className="text-green-600 font-bold">{planDetails.savings} ({planDetails.discount})</span>
+              </div>
+              <div className="flex justify-between items-center">
+                <span className="text-gray-600">Payment:</span>
+                <span className="text-green-600 font-bold">One-time only - No recurring charges</span>
               </div>
             </div>
 

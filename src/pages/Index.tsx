@@ -1,3 +1,4 @@
+
 import { useState, useEffect } from "react";
 import { useTranslation } from "react-i18next";
 import { useToast } from "@/hooks/use-toast";
@@ -57,7 +58,7 @@ const plans: Plan[] = [
     price: "89.99",
     originalPrice: "375",
     discount: "76",
-    checkoutUrl: "https://whop.com/checkout/plan_6Zhjmgsm8OK44?d2c=true"
+    checkoutUrl: "https://whop.com/checkout/plan_5Xw4609QlND3y?d2c=true"
   },
   {
     type: "basic",
@@ -65,7 +66,7 @@ const plans: Plan[] = [
     price: "49.99",
     originalPrice: "250",
     discount: "80",
-    checkoutUrl: "https://whop.com/checkout/plan_v7Agslb8JPG4u?d2c=true",
+    checkoutUrl: "https://whop.com/checkout/plan_DnnCUJAKGPBGA?d2c=true",
     deviceLimit: 5
   }
 ];
